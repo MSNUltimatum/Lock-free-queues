@@ -23,15 +23,12 @@ int enqueue(struct LFqueue *lfqueue1, void* data){
     newNode->data = data;
     newNode->next = NULL;
     while (1) {
-        if(lfqueue1->size < lfqueue1->maxQueueSize) {
-            tail = lfqueue1->tail;
-            if (CAS(&tail->next, NULL, newNode)) {
-                CAS(&lfqueue1->tail, tail, newNode);
-                lfqueue1->size += 1;
-                return 1;
-            } else {
-                CAS(&lfqueue1->tail, tail, tail->next);
-            }
+        tail = lfqueue1->tail;
+        if (CAS(&tail->next, NULL, newNode)) {
+            CAS(&lfqueue1->tail, tail, newNode);
+            return 1;
+        } else {
+            CAS(&lfqueue1->tail, tail, tail->next);
         }
     }
 }
@@ -43,13 +40,14 @@ void *dequeue(lfqueue *lfqueue1){
         node_q *nextHead = head->next;
         if(head == tail){
             if(nextHead == NULL){
-                return (void *) QUEUE_EMPTY;
+                continue;
+                //return (void *) QUEUE_EMPTY;
             }
             CAS(&lfqueue1->tail, head, nextHead);
         } else {
             void* result = nextHead->data;
             if(CAS(&lfqueue1->head, head, nextHead)) {
-                free(head);
+
                 lfqueue1->size -= 1;
                 return result;
             }

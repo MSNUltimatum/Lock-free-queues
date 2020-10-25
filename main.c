@@ -5,6 +5,7 @@
 #include "Consumer.h"
 #include <pthread.h>
 
+
 int main() {
     lfqueue *queue = calloc(1, sizeof(lfqueue));
     init(queue, 10);

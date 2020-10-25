@@ -8,10 +8,11 @@
 
 void* consumer(void* arg){
     lfqueue *queue = arg;
-    while (dequeue(queue)){
-        int res = dequeue(queue);
+    int res = 0;
+    do{
+        res = dequeue(queue);
         if(res != 0){
             printf("Consumer get %d\n", res);
         }
-    }
+    }while (res != 0);
 }
