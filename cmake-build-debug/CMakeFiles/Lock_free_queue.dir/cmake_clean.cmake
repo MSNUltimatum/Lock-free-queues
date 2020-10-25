@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Lock_free_queue.dir/Consumer.c.obj"
+  "CMakeFiles/Lock_free_queue.dir/Producer.c.obj"
   "CMakeFiles/Lock_free_queue.dir/Queue.c.obj"
   "CMakeFiles/Lock_free_queue.dir/main.c.obj"
   "Lock_free_queue.exe"

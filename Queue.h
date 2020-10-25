@@ -13,10 +13,12 @@ typedef struct queue_node{
 typedef struct LFqueue{
     struct queue_node *head;
     struct queue_node *tail;
+    unsigned int maxQueueSize;
     unsigned int size;
 } lfqueue;
 
-void init(lfqueue *lfqueue);
-int enqueue(lfqueue *lfqueue, void* data);
-void *dequeue(lfqueue *lfqueue);
+void init(lfqueue *lfqueue1, int maxQueueSize);
+int enqueue(lfqueue *lfqueue1, void* data);
+void *dequeue(lfqueue *lfqueue1);
+void freeQueue(lfqueue *lfqueue1);
 #endif //LOCK_FREE_QUEUE_QUEUE_H

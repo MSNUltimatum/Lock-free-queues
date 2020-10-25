@@ -142,6 +142,60 @@ Lock_free_queue/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lock_free_queue.dir\build.make CMakeFiles/Lock_free_queue.dir/build
 .PHONY : Lock_free_queue/fast
 
+Consumer.obj: Consumer.c.obj
+
+.PHONY : Consumer.obj
+
+# target to build an object file
+Consumer.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lock_free_queue.dir\build.make CMakeFiles/Lock_free_queue.dir/Consumer.c.obj
+.PHONY : Consumer.c.obj
+
+Consumer.i: Consumer.c.i
+
+.PHONY : Consumer.i
+
+# target to preprocess a source file
+Consumer.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lock_free_queue.dir\build.make CMakeFiles/Lock_free_queue.dir/Consumer.c.i
+.PHONY : Consumer.c.i
+
+Consumer.s: Consumer.c.s
+
+.PHONY : Consumer.s
+
+# target to generate assembly for a file
+Consumer.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lock_free_queue.dir\build.make CMakeFiles/Lock_free_queue.dir/Consumer.c.s
+.PHONY : Consumer.c.s
+
+Producer.obj: Producer.c.obj
+
+.PHONY : Producer.obj
+
+# target to build an object file
+Producer.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lock_free_queue.dir\build.make CMakeFiles/Lock_free_queue.dir/Producer.c.obj
+.PHONY : Producer.c.obj
+
+Producer.i: Producer.c.i
+
+.PHONY : Producer.i
+
+# target to preprocess a source file
+Producer.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lock_free_queue.dir\build.make CMakeFiles/Lock_free_queue.dir/Producer.c.i
+.PHONY : Producer.c.i
+
+Producer.s: Producer.c.s
+
+.PHONY : Producer.s
+
+# target to generate assembly for a file
+Producer.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lock_free_queue.dir\build.make CMakeFiles/Lock_free_queue.dir/Producer.c.s
+.PHONY : Producer.c.s
+
 Queue.obj: Queue.c.obj
 
 .PHONY : Queue.obj
@@ -205,6 +259,12 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Lock_free_queue
+	@echo ... Consumer.obj
+	@echo ... Consumer.i
+	@echo ... Consumer.s
+	@echo ... Producer.obj
+	@echo ... Producer.i
+	@echo ... Producer.s
 	@echo ... Queue.obj
 	@echo ... Queue.i
 	@echo ... Queue.s
