@@ -1,0 +1,3 @@
+E:/C projects/Lock-free_queue/cmake-build-debug/CMakeFiles/Lock_free_queue.dir
+E:/C projects/Lock-free_queue/cmake-build-debug/CMakeFiles/edit_cache.dir
+E:/C projects/Lock-free_queue/cmake-build-debug/CMakeFiles/rebuild_cache.dir
