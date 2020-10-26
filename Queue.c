@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <stdatomic.h>
 #define CAS __sync_bool_compare_and_swap
+#define INCREMENT __atomic_fetch_add
 #define QUEUE_OVERFLOW -2
 #define QUEUE_EMPTY 0
 
@@ -23,12 +24,17 @@ int enqueue(struct LFqueue *lfqueue1, void* data){
     newNode->data = data;
     newNode->next = NULL;
     while (1) {
-        tail = lfqueue1->tail;
-        if (CAS(&tail->next, NULL, newNode)) {
-            CAS(&lfqueue1->tail, tail, newNode);
-            return 1;
+        if(lfqueue1->size < lfqueue1->maxQueueSize) {
+            tail = lfqueue1->tail;
+            if (CAS(&tail->next, NULL, newNode)) {
+                CAS(&lfqueue1->tail, tail, newNode);
+                INCREMENT(&lfqueue1->size, 1, __ATOMIC_SEQ_CST);
+                return 1;
+            } else {
+                CAS(&lfqueue1->tail, tail, tail->next);
+            }
         } else {
-            CAS(&lfqueue1->tail, tail, tail->next);
+            continue;
         }
     }
 }
@@ -41,13 +47,13 @@ void *dequeue(lfqueue *lfqueue1){
         if(head == tail){
             if(nextHead == NULL){
                 continue;
-                //return (void *) QUEUE_EMPTY;
             }
             CAS(&lfqueue1->tail, head, nextHead);
         } else {
             void* result = nextHead->data;
             if(CAS(&lfqueue1->head, head, nextHead)) {
-
+                INCREMENT(&lfqueue1->size, -1, __ATOMIC_SEQ_CST);
+                free(head);
                 lfqueue1->size -= 1;
                 return result;
             }

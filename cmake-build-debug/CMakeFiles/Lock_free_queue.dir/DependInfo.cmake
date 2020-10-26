@@ -4,10 +4,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "E:/C projects/Lock-free_queue/Consumer.c" "E:/C projects/Lock-free_queue/cmake-build-debug/CMakeFiles/Lock_free_queue.dir/Consumer.c.obj"
-  "E:/C projects/Lock-free_queue/Producer.c" "E:/C projects/Lock-free_queue/cmake-build-debug/CMakeFiles/Lock_free_queue.dir/Producer.c.obj"
-  "E:/C projects/Lock-free_queue/Queue.c" "E:/C projects/Lock-free_queue/cmake-build-debug/CMakeFiles/Lock_free_queue.dir/Queue.c.obj"
-  "E:/C projects/Lock-free_queue/main.c" "E:/C projects/Lock-free_queue/cmake-build-debug/CMakeFiles/Lock_free_queue.dir/main.c.obj"
+  "C:/Users/egrsa/CLionProjects/Lock-free_queue/Consumer.c" "C:/Users/egrsa/CLionProjects/Lock-free_queue/cmake-build-debug/CMakeFiles/Lock_free_queue.dir/Consumer.c.obj"
+  "C:/Users/egrsa/CLionProjects/Lock-free_queue/Producer.c" "C:/Users/egrsa/CLionProjects/Lock-free_queue/cmake-build-debug/CMakeFiles/Lock_free_queue.dir/Producer.c.obj"
+  "C:/Users/egrsa/CLionProjects/Lock-free_queue/Queue.c" "C:/Users/egrsa/CLionProjects/Lock-free_queue/cmake-build-debug/CMakeFiles/Lock_free_queue.dir/Queue.c.obj"
+  "C:/Users/egrsa/CLionProjects/Lock-free_queue/main.c" "C:/Users/egrsa/CLionProjects/Lock-free_queue/cmake-build-debug/CMakeFiles/Lock_free_queue.dir/main.c.obj"
+  "C:/Users/egrsa/CLionProjects/Lock-free_queue/queue_with_id.c" "C:/Users/egrsa/CLionProjects/Lock-free_queue/cmake-build-debug/CMakeFiles/Lock_free_queue.dir/queue_with_id.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

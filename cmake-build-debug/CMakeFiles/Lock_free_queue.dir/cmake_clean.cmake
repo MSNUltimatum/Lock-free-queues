@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Lock_free_queue.dir/Producer.c.obj"
   "CMakeFiles/Lock_free_queue.dir/Queue.c.obj"
   "CMakeFiles/Lock_free_queue.dir/main.c.obj"
+  "CMakeFiles/Lock_free_queue.dir/queue_with_id.c.obj"
   "Lock_free_queue.exe"
   "Lock_free_queue.exe.manifest"
   "Lock_free_queue.pdb"
