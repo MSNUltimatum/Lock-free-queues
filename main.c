@@ -8,7 +8,7 @@
 #include "Consumer.h"
 #include <pthread.h>
 #include "queue_with_id.h"
-#define PRODUCER_COUNT 2
+#define PRODUCER_COUNT 1
 #define CONSUMER_COUNT 3
 
 
@@ -16,6 +16,7 @@ int main() {
     lfqueue *queue = calloc(1, sizeof(lfqueue));
     init(queue, 10);
     pthread_t threads[CONSUMER_COUNT + PRODUCER_COUNT];
+
     struct queue_with_id producerQueues[PRODUCER_COUNT];
     for (int i = 0; i < PRODUCER_COUNT; ++i) {
         producerQueues[i].lfqueue1 = queue;

@@ -5,6 +5,8 @@
 #include <malloc.h>
 #include <stdio.h>
 #include <stdatomic.h>
+#include <zconf.h>
+
 #define CAS __sync_bool_compare_and_swap
 #define INCREMENT __atomic_fetch_add
 #define QUEUE_OVERFLOW -2
@@ -20,45 +22,54 @@ void init(lfqueue *lfqueue1, int maxQueueSize){
 }
 
 int enqueue(struct LFqueue *lfqueue1, void* data){
-    struct queue_node *tail, *newNode = calloc(1, sizeof(node_q));
+    struct queue_node *tail,  *newNode = calloc(1, sizeof(node_q));
     newNode->data = data;
     newNode->next = NULL;
     while (1) {
+        tail = lfqueue1->tail;
+        node_q *next = tail->next;
         if(lfqueue1->size < lfqueue1->maxQueueSize) {
-            tail = lfqueue1->tail;
-            if (CAS(&tail->next, NULL, newNode)) {
-                CAS(&lfqueue1->tail, tail, newNode);
-                INCREMENT(&lfqueue1->size, 1, __ATOMIC_SEQ_CST);
-                return 1;
-            } else {
-                CAS(&lfqueue1->tail, tail, tail->next);
+            if (tail == lfqueue1->tail) {
+                if (next == NULL) {
+                    if (CAS(&tail->next, next, newNode)) {
+                        INCREMENT(&lfqueue1->size, 1, __ATOMIC_SEQ_CST);
+                        break;
+                    }
+                } else {
+                    CAS(&lfqueue1->tail, tail, next);
+                }
             }
         } else {
             continue;
         }
     }
+    CAS(&lfqueue1->tail, tail, newNode);
 }
 
 void *dequeue(lfqueue *lfqueue1){
-    while (1){
-        node_q *head = lfqueue1->head;
+    void *result;
+    node_q *head;
+    while (1) {
+        head = lfqueue1->head;
         node_q *tail = lfqueue1->tail;
         node_q *nextHead = head->next;
-        if(head == tail){
-            if(nextHead == NULL){
-                continue;
-            }
-            CAS(&lfqueue1->tail, head, nextHead);
-        } else {
-            void* result = nextHead->data;
-            if(CAS(&lfqueue1->head, head, nextHead)) {
-                INCREMENT(&lfqueue1->size, -1, __ATOMIC_SEQ_CST);
-                free(head);
-                lfqueue1->size -= 1;
-                return result;
+        if (head == lfqueue1->head) {
+            if (head == tail) {
+                if (nextHead == NULL) {
+                    return QUEUE_EMPTY;
+                }
+                CAS(&lfqueue1->tail, head, nextHead);
+            } else {
+                result = nextHead->data;
+                if (CAS(&lfqueue1->head, head, nextHead)) {
+                    INCREMENT(&lfqueue1->size, -1, __ATOMIC_SEQ_CST);
+                    break;
+                }
             }
         }
     }
+    free(head);
+    return result;
 }
 
 void freeQueue(lfqueue *lfqueue1){
