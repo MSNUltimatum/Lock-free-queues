@@ -1,4 +1,4 @@
-ToolSet: w64 6.0 (local)@C:\Coding\MinGW\mingw32
+ToolSet: w64 6.0 (local)@E:\C projects\Mingw\mingw32
 Options: 
 
 Options:

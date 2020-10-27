@@ -3,13 +3,10 @@
 //
 #include "Queue.h"
 #include <malloc.h>
-#include <stdio.h>
-#include <stdatomic.h>
 #include <zconf.h>
 
 #define CAS __sync_bool_compare_and_swap
 #define INCREMENT __atomic_fetch_add
-#define QUEUE_OVERFLOW -2
 #define QUEUE_EMPTY 0
 
 void init(lfqueue *lfqueue1, int maxQueueSize){

@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/egrsa/CLionProjects/Lock-free_queue
+# Install script for directory: E:/C projects/Lock-free_queue
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/egrsa/CLionProjects/Lock-free_queue/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "E:/C projects/Lock-free_queue/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

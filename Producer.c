@@ -4,6 +4,7 @@
 #include "Producer.h"
 #include "Queue.h"
 #include <stdio.h>
+#include <zconf.h>
 #include "queue_with_id.h"
 
 void *producer(void *arg){

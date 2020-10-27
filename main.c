@@ -8,8 +8,8 @@
 #include "Consumer.h"
 #include <pthread.h>
 #include "queue_with_id.h"
-#define PRODUCER_COUNT 1
-#define CONSUMER_COUNT 3
+#define PRODUCER_COUNT 10
+#define CONSUMER_COUNT 10
 
 
 int main() {
@@ -38,8 +38,8 @@ int main() {
     }
 
     void* t;
-    for (int i = 0; i < 4; ++i) {
-        pthread_join(threads[i], t);
+    for (int i = 0; i < CONSUMER_COUNT + PRODUCER_COUNT; ++i) {
+        pthread_join(threads[i], &t);
     }
     return 0;
 }
