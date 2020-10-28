@@ -3,24 +3,27 @@
 
 CMakeFiles/Lock_free_queue.dir/Consumer.c.obj: ../Consumer.c
 CMakeFiles/Lock_free_queue.dir/Consumer.c.obj: ../Consumer.h
-CMakeFiles/Lock_free_queue.dir/Consumer.c.obj: ../Queue.h
+CMakeFiles/Lock_free_queue.dir/Consumer.c.obj: ../Optimistic_lock_free_queue.h
 CMakeFiles/Lock_free_queue.dir/Consumer.c.obj: ../queue_with_id.h
 
+CMakeFiles/Lock_free_queue.dir/Optimistic_lock_free_queue.c.obj: ../Optimistic_lock_free_queue.c
+CMakeFiles/Lock_free_queue.dir/Optimistic_lock_free_queue.c.obj: ../Optimistic_lock_free_queue.h
+
+CMakeFiles/Lock_free_queue.dir/Producer.c.obj: ../Optimistic_lock_free_queue.h
 CMakeFiles/Lock_free_queue.dir/Producer.c.obj: ../Producer.c
 CMakeFiles/Lock_free_queue.dir/Producer.c.obj: ../Producer.h
-CMakeFiles/Lock_free_queue.dir/Producer.c.obj: ../Queue.h
 CMakeFiles/Lock_free_queue.dir/Producer.c.obj: ../queue_with_id.h
 
 CMakeFiles/Lock_free_queue.dir/Queue.c.obj: ../Queue.c
 CMakeFiles/Lock_free_queue.dir/Queue.c.obj: ../Queue.h
 
 CMakeFiles/Lock_free_queue.dir/main.c.obj: ../Consumer.h
+CMakeFiles/Lock_free_queue.dir/main.c.obj: ../Optimistic_lock_free_queue.h
 CMakeFiles/Lock_free_queue.dir/main.c.obj: ../Producer.h
-CMakeFiles/Lock_free_queue.dir/main.c.obj: ../Queue.h
 CMakeFiles/Lock_free_queue.dir/main.c.obj: ../main.c
 CMakeFiles/Lock_free_queue.dir/main.c.obj: ../queue_with_id.h
 
-CMakeFiles/Lock_free_queue.dir/queue_with_id.c.obj: ../Queue.h
+CMakeFiles/Lock_free_queue.dir/queue_with_id.c.obj: ../Optimistic_lock_free_queue.h
 CMakeFiles/Lock_free_queue.dir/queue_with_id.c.obj: ../queue_with_id.c
 CMakeFiles/Lock_free_queue.dir/queue_with_id.c.obj: ../queue_with_id.h
 

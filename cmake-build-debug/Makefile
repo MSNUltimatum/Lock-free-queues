@@ -169,6 +169,33 @@ Consumer.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lock_free_queue.dir\build.make CMakeFiles/Lock_free_queue.dir/Consumer.c.s
 .PHONY : Consumer.c.s
 
+Optimistic_lock_free_queue.obj: Optimistic_lock_free_queue.c.obj
+
+.PHONY : Optimistic_lock_free_queue.obj
+
+# target to build an object file
+Optimistic_lock_free_queue.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lock_free_queue.dir\build.make CMakeFiles/Lock_free_queue.dir/Optimistic_lock_free_queue.c.obj
+.PHONY : Optimistic_lock_free_queue.c.obj
+
+Optimistic_lock_free_queue.i: Optimistic_lock_free_queue.c.i
+
+.PHONY : Optimistic_lock_free_queue.i
+
+# target to preprocess a source file
+Optimistic_lock_free_queue.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lock_free_queue.dir\build.make CMakeFiles/Lock_free_queue.dir/Optimistic_lock_free_queue.c.i
+.PHONY : Optimistic_lock_free_queue.c.i
+
+Optimistic_lock_free_queue.s: Optimistic_lock_free_queue.c.s
+
+.PHONY : Optimistic_lock_free_queue.s
+
+# target to generate assembly for a file
+Optimistic_lock_free_queue.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lock_free_queue.dir\build.make CMakeFiles/Lock_free_queue.dir/Optimistic_lock_free_queue.c.s
+.PHONY : Optimistic_lock_free_queue.c.s
+
 Producer.obj: Producer.c.obj
 
 .PHONY : Producer.obj
@@ -289,6 +316,9 @@ help:
 	@echo ... Consumer.obj
 	@echo ... Consumer.i
 	@echo ... Consumer.s
+	@echo ... Optimistic_lock_free_queue.obj
+	@echo ... Optimistic_lock_free_queue.i
+	@echo ... Optimistic_lock_free_queue.s
 	@echo ... Producer.obj
 	@echo ... Producer.i
 	@echo ... Producer.s

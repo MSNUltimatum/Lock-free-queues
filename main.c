@@ -2,19 +2,21 @@
 // Created by Ultimatum on 24.10.2020.
 //
 #include <stdio.h>
-#include "Queue.h"
+#include "Optimistic_lock_free_queue.h"
 #include <malloc.h>
 #include "Producer.h"
 #include "Consumer.h"
 #include <pthread.h>
 #include "queue_with_id.h"
-#define PRODUCER_COUNT 10
-#define CONSUMER_COUNT 10
+
+
+#define PRODUCER_COUNT 5
+#define CONSUMER_COUNT 5
 
 
 int main() {
-    lfqueue *queue = calloc(1, sizeof(lfqueue));
-    init(queue, 10);
+    struct queue *queue = calloc(1, sizeof(struct queue));
+    initQueue(queue);
     pthread_t threads[CONSUMER_COUNT + PRODUCER_COUNT];
 
     struct queue_with_id producerQueues[PRODUCER_COUNT];

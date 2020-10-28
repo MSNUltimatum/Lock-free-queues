@@ -80,6 +80,12 @@
 		<Unit filename="E:/C projects/Lock-free_queue/Consumer.h">
 			<Option target="Lock_free_queue"/>
 		</Unit>
+		<Unit filename="E:/C projects/Lock-free_queue/Optimistic_lock_free_queue.c">
+			<Option target="Lock_free_queue"/>
+		</Unit>
+		<Unit filename="E:/C projects/Lock-free_queue/Optimistic_lock_free_queue.h">
+			<Option target="Lock_free_queue"/>
+		</Unit>
 		<Unit filename="E:/C projects/Lock-free_queue/Producer.c">
 			<Option target="Lock_free_queue"/>
 		</Unit>
