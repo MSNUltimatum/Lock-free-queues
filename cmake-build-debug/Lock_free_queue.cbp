@@ -80,6 +80,12 @@
 		<Unit filename="E:/C projects/Lock-free_queue/Consumer.h">
 			<Option target="Lock_free_queue"/>
 		</Unit>
+		<Unit filename="E:/C projects/Lock-free_queue/MS_queue.c">
+			<Option target="Lock_free_queue"/>
+		</Unit>
+		<Unit filename="E:/C projects/Lock-free_queue/MS_queue.h">
+			<Option target="Lock_free_queue"/>
+		</Unit>
 		<Unit filename="E:/C projects/Lock-free_queue/Optimistic_lock_free_queue.c">
 			<Option target="Lock_free_queue"/>
 		</Unit>
@@ -90,12 +96,6 @@
 			<Option target="Lock_free_queue"/>
 		</Unit>
 		<Unit filename="E:/C projects/Lock-free_queue/Producer.h">
-			<Option target="Lock_free_queue"/>
-		</Unit>
-		<Unit filename="E:/C projects/Lock-free_queue/Queue.c">
-			<Option target="Lock_free_queue"/>
-		</Unit>
-		<Unit filename="E:/C projects/Lock-free_queue/Queue.h">
 			<Option target="Lock_free_queue"/>
 		</Unit>
 		<Unit filename="E:/C projects/Lock-free_queue/main.c">

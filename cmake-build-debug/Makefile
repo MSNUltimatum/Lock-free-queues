@@ -169,6 +169,33 @@ Consumer.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lock_free_queue.dir\build.make CMakeFiles/Lock_free_queue.dir/Consumer.c.s
 .PHONY : Consumer.c.s
 
+MS_queue.obj: MS_queue.c.obj
+
+.PHONY : MS_queue.obj
+
+# target to build an object file
+MS_queue.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lock_free_queue.dir\build.make CMakeFiles/Lock_free_queue.dir/MS_queue.c.obj
+.PHONY : MS_queue.c.obj
+
+MS_queue.i: MS_queue.c.i
+
+.PHONY : MS_queue.i
+
+# target to preprocess a source file
+MS_queue.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lock_free_queue.dir\build.make CMakeFiles/Lock_free_queue.dir/MS_queue.c.i
+.PHONY : MS_queue.c.i
+
+MS_queue.s: MS_queue.c.s
+
+.PHONY : MS_queue.s
+
+# target to generate assembly for a file
+MS_queue.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lock_free_queue.dir\build.make CMakeFiles/Lock_free_queue.dir/MS_queue.c.s
+.PHONY : MS_queue.c.s
+
 Optimistic_lock_free_queue.obj: Optimistic_lock_free_queue.c.obj
 
 .PHONY : Optimistic_lock_free_queue.obj
@@ -222,33 +249,6 @@ Producer.s: Producer.c.s
 Producer.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lock_free_queue.dir\build.make CMakeFiles/Lock_free_queue.dir/Producer.c.s
 .PHONY : Producer.c.s
-
-Queue.obj: Queue.c.obj
-
-.PHONY : Queue.obj
-
-# target to build an object file
-Queue.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lock_free_queue.dir\build.make CMakeFiles/Lock_free_queue.dir/Queue.c.obj
-.PHONY : Queue.c.obj
-
-Queue.i: Queue.c.i
-
-.PHONY : Queue.i
-
-# target to preprocess a source file
-Queue.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lock_free_queue.dir\build.make CMakeFiles/Lock_free_queue.dir/Queue.c.i
-.PHONY : Queue.c.i
-
-Queue.s: Queue.c.s
-
-.PHONY : Queue.s
-
-# target to generate assembly for a file
-Queue.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lock_free_queue.dir\build.make CMakeFiles/Lock_free_queue.dir/Queue.c.s
-.PHONY : Queue.c.s
 
 main.obj: main.c.obj
 
@@ -316,15 +316,15 @@ help:
 	@echo ... Consumer.obj
 	@echo ... Consumer.i
 	@echo ... Consumer.s
+	@echo ... MS_queue.obj
+	@echo ... MS_queue.i
+	@echo ... MS_queue.s
 	@echo ... Optimistic_lock_free_queue.obj
 	@echo ... Optimistic_lock_free_queue.i
 	@echo ... Optimistic_lock_free_queue.s
 	@echo ... Producer.obj
 	@echo ... Producer.i
 	@echo ... Producer.s
-	@echo ... Queue.obj
-	@echo ... Queue.i
-	@echo ... Queue.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

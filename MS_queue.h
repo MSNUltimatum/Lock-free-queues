@@ -2,8 +2,8 @@
 // Created by Ultimatum on 25.10.2020.
 //
 
-#ifndef LOCK_FREE_QUEUE_QUEUE_H
-#define LOCK_FREE_QUEUE_QUEUE_H
+#ifndef LOCK_FREE_QUEUE_MS_QUEUE_H
+#define LOCK_FREE_QUEUE_MS_QUEUE_H
 
 typedef struct queue_node{
     void* data;
@@ -21,4 +21,4 @@ void init(lfqueue *lfqueue1, int maxQueueSize);
 int enqueue(lfqueue *lfqueue1, void* data);
 void *dequeue(lfqueue *lfqueue1);
 void freeQueue(lfqueue *lfqueue1);
-#endif //LOCK_FREE_QUEUE_QUEUE_H
+#endif //LOCK_FREE_QUEUE_MS_QUEUE_H

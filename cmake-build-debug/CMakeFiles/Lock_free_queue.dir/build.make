@@ -89,18 +89,18 @@ CMakeFiles/Lock_free_queue.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Lock_free_queue.dir/main.c.s"
 	"E:\C projects\Mingw\mingw32\bin\gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "E:\C projects\Lock-free_queue\main.c" -o CMakeFiles\Lock_free_queue.dir\main.c.s
 
-CMakeFiles/Lock_free_queue.dir/Queue.c.obj: CMakeFiles/Lock_free_queue.dir/flags.make
-CMakeFiles/Lock_free_queue.dir/Queue.c.obj: ../Queue.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\C projects\Lock-free_queue\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/Lock_free_queue.dir/Queue.c.obj"
-	"E:\C projects\Mingw\mingw32\bin\gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\Lock_free_queue.dir\Queue.c.obj   -c "E:\C projects\Lock-free_queue\Queue.c"
+CMakeFiles/Lock_free_queue.dir/MS_queue.c.obj: CMakeFiles/Lock_free_queue.dir/flags.make
+CMakeFiles/Lock_free_queue.dir/MS_queue.c.obj: ../MS_queue.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\C projects\Lock-free_queue\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/Lock_free_queue.dir/MS_queue.c.obj"
+	"E:\C projects\Mingw\mingw32\bin\gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\Lock_free_queue.dir\MS_queue.c.obj   -c "E:\C projects\Lock-free_queue\MS_queue.c"
 
-CMakeFiles/Lock_free_queue.dir/Queue.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Lock_free_queue.dir/Queue.c.i"
-	"E:\C projects\Mingw\mingw32\bin\gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "E:\C projects\Lock-free_queue\Queue.c" > CMakeFiles\Lock_free_queue.dir\Queue.c.i
+CMakeFiles/Lock_free_queue.dir/MS_queue.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Lock_free_queue.dir/MS_queue.c.i"
+	"E:\C projects\Mingw\mingw32\bin\gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "E:\C projects\Lock-free_queue\MS_queue.c" > CMakeFiles\Lock_free_queue.dir\MS_queue.c.i
 
-CMakeFiles/Lock_free_queue.dir/Queue.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Lock_free_queue.dir/Queue.c.s"
-	"E:\C projects\Mingw\mingw32\bin\gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "E:\C projects\Lock-free_queue\Queue.c" -o CMakeFiles\Lock_free_queue.dir\Queue.c.s
+CMakeFiles/Lock_free_queue.dir/MS_queue.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Lock_free_queue.dir/MS_queue.c.s"
+	"E:\C projects\Mingw\mingw32\bin\gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "E:\C projects\Lock-free_queue\MS_queue.c" -o CMakeFiles\Lock_free_queue.dir\MS_queue.c.s
 
 CMakeFiles/Lock_free_queue.dir/Producer.c.obj: CMakeFiles/Lock_free_queue.dir/flags.make
 CMakeFiles/Lock_free_queue.dir/Producer.c.obj: ../Producer.c
@@ -157,7 +157,7 @@ CMakeFiles/Lock_free_queue.dir/Optimistic_lock_free_queue.c.s: cmake_force
 # Object files for target Lock_free_queue
 Lock_free_queue_OBJECTS = \
 "CMakeFiles/Lock_free_queue.dir/main.c.obj" \
-"CMakeFiles/Lock_free_queue.dir/Queue.c.obj" \
+"CMakeFiles/Lock_free_queue.dir/MS_queue.c.obj" \
 "CMakeFiles/Lock_free_queue.dir/Producer.c.obj" \
 "CMakeFiles/Lock_free_queue.dir/Consumer.c.obj" \
 "CMakeFiles/Lock_free_queue.dir/queue_with_id.c.obj" \
@@ -167,7 +167,7 @@ Lock_free_queue_OBJECTS = \
 Lock_free_queue_EXTERNAL_OBJECTS =
 
 Lock_free_queue.exe: CMakeFiles/Lock_free_queue.dir/main.c.obj
-Lock_free_queue.exe: CMakeFiles/Lock_free_queue.dir/Queue.c.obj
+Lock_free_queue.exe: CMakeFiles/Lock_free_queue.dir/MS_queue.c.obj
 Lock_free_queue.exe: CMakeFiles/Lock_free_queue.dir/Producer.c.obj
 Lock_free_queue.exe: CMakeFiles/Lock_free_queue.dir/Consumer.c.obj
 Lock_free_queue.exe: CMakeFiles/Lock_free_queue.dir/queue_with_id.c.obj

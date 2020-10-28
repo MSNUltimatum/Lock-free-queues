@@ -10,10 +10,9 @@
 void *producer(void *arg){
     struct queue_with_id *queue = arg;
     int number = 1;
-    for (int i = 0; i < 1000; ++i) {
+    do {
         enqueueOpt(queue->lfqueue1, (void *) number);
         printf("Producer with id = %d insert %d\n",queue->id, number);
         number += 1;
-    }
-    return NULL;
+    } while (1);
 }
