@@ -3,4 +3,4 @@ project(Lock_free_queue C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(Lock_free_queue main.c MS_queue.c MS_queue.h Producer.c Producer.h Consumer.c Consumer.h queue_with_id.c queue_with_id.h Optimistic_lock_free_queue.c Optimistic_lock_free_queue.h)
+add_executable(Lock_free_queue main.c MSLFQ/MS_queue.c MSLFQ/MS_queue.h ConsumerProducer/Producer.c ConsumerProducer/Producer.h ConsumerProducer/Consumer.c ConsumerProducer/Consumer.h HelpStruct/queue_with_id.c HelpStruct/queue_with_id.h OptimisticLFQ/Optimistic_lock_free_queue.c OptimisticLFQ/Optimistic_lock_free_queue.h LFS/LFStack.c LFS/LFStack.h)

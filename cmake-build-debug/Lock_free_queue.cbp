@@ -8,106 +8,112 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="E:/C projects/Lock-free_queue/cmake-build-debug"/>
+				<Option working_dir="C:/Users/egrsa/CLionProjects/Lock-free_queue/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="E:/C projects/Mingw/mingw32/bin/mingw32-make.exe -f &quot;E:/C projects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="E:/C projects/Mingw/mingw32/bin/mingw32-make.exe -f &quot;E:/C projects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="E:/C projects/Mingw/mingw32/bin/mingw32-make.exe -f &quot;E:/C projects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="E:/C projects/Mingw/mingw32/bin/mingw32-make.exe -f &quot;E:/C projects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/Coding/MinGW/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/egrsa/CLionProjects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/Coding/MinGW/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/egrsa/CLionProjects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Coding/MinGW/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/egrsa/CLionProjects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Coding/MinGW/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/egrsa/CLionProjects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Lock_free_queue">
-				<Option output="E:/C projects/Lock-free_queue/cmake-build-debug/Lock_free_queue.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="E:/C projects/Lock-free_queue/cmake-build-debug"/>
+				<Option output="C:/Users/egrsa/CLionProjects/Lock-free_queue/cmake-build-debug/Lock_free_queue.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/egrsa/CLionProjects/Lock-free_queue/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="E:/C projects/Mingw/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
-					<Add directory="E:/C projects/Mingw/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
-					<Add directory="E:/C projects/Mingw/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
+					<Add directory="C:/Coding/MinGW/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Coding/MinGW/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Coding/MinGW/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="E:/C projects/Mingw/mingw32/bin/mingw32-make.exe -f &quot;E:/C projects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 Lock_free_queue"/>
-					<CompileFile command="E:/C projects/Mingw/mingw32/bin/mingw32-make.exe -f &quot;E:/C projects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="E:/C projects/Mingw/mingw32/bin/mingw32-make.exe -f &quot;E:/C projects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="E:/C projects/Mingw/mingw32/bin/mingw32-make.exe -f &quot;E:/C projects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/Coding/MinGW/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/egrsa/CLionProjects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 Lock_free_queue"/>
+					<CompileFile command="C:/Coding/MinGW/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/egrsa/CLionProjects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Coding/MinGW/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/egrsa/CLionProjects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Coding/MinGW/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/egrsa/CLionProjects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Lock_free_queue/fast">
-				<Option output="E:/C projects/Lock-free_queue/cmake-build-debug/Lock_free_queue.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="E:/C projects/Lock-free_queue/cmake-build-debug"/>
+				<Option output="C:/Users/egrsa/CLionProjects/Lock-free_queue/cmake-build-debug/Lock_free_queue.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/egrsa/CLionProjects/Lock-free_queue/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="E:/C projects/Mingw/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
-					<Add directory="E:/C projects/Mingw/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
-					<Add directory="E:/C projects/Mingw/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
+					<Add directory="C:/Coding/MinGW/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Coding/MinGW/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Coding/MinGW/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="E:/C projects/Mingw/mingw32/bin/mingw32-make.exe -f &quot;E:/C projects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 Lock_free_queue/fast"/>
-					<CompileFile command="E:/C projects/Mingw/mingw32/bin/mingw32-make.exe -f &quot;E:/C projects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="E:/C projects/Mingw/mingw32/bin/mingw32-make.exe -f &quot;E:/C projects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="E:/C projects/Mingw/mingw32/bin/mingw32-make.exe -f &quot;E:/C projects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/Coding/MinGW/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/egrsa/CLionProjects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 Lock_free_queue/fast"/>
+					<CompileFile command="C:/Coding/MinGW/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/egrsa/CLionProjects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Coding/MinGW/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/egrsa/CLionProjects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Coding/MinGW/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/egrsa/CLionProjects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="E:/C projects/Lock-free_queue/cmake-build-debug"/>
+				<Option working_dir="C:/Users/egrsa/CLionProjects/Lock-free_queue/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="E:/C projects/Mingw/mingw32/bin/mingw32-make.exe -f &quot;E:/C projects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="E:/C projects/Mingw/mingw32/bin/mingw32-make.exe -f &quot;E:/C projects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="E:/C projects/Mingw/mingw32/bin/mingw32-make.exe -f &quot;E:/C projects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="E:/C projects/Mingw/mingw32/bin/mingw32-make.exe -f &quot;E:/C projects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/Coding/MinGW/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/egrsa/CLionProjects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/Coding/MinGW/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/egrsa/CLionProjects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Coding/MinGW/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/egrsa/CLionProjects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Coding/MinGW/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/egrsa/CLionProjects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="E:/C projects/Lock-free_queue/cmake-build-debug"/>
+				<Option working_dir="C:/Users/egrsa/CLionProjects/Lock-free_queue/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="E:/C projects/Mingw/mingw32/bin/mingw32-make.exe -f &quot;E:/C projects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="E:/C projects/Mingw/mingw32/bin/mingw32-make.exe -f &quot;E:/C projects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="E:/C projects/Mingw/mingw32/bin/mingw32-make.exe -f &quot;E:/C projects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="E:/C projects/Mingw/mingw32/bin/mingw32-make.exe -f &quot;E:/C projects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/Coding/MinGW/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/egrsa/CLionProjects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/Coding/MinGW/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/egrsa/CLionProjects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Coding/MinGW/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/egrsa/CLionProjects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Coding/MinGW/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/egrsa/CLionProjects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="E:/C projects/Lock-free_queue/Consumer.c">
+		<Unit filename="C:/Users/egrsa/CLionProjects/Lock-free_queue/ConsumerProducer/Consumer.c">
 			<Option target="Lock_free_queue"/>
 		</Unit>
-		<Unit filename="E:/C projects/Lock-free_queue/Consumer.h">
+		<Unit filename="C:/Users/egrsa/CLionProjects/Lock-free_queue/ConsumerProducer/Consumer.h">
 			<Option target="Lock_free_queue"/>
 		</Unit>
-		<Unit filename="E:/C projects/Lock-free_queue/MS_queue.c">
+		<Unit filename="C:/Users/egrsa/CLionProjects/Lock-free_queue/ConsumerProducer/Producer.c">
 			<Option target="Lock_free_queue"/>
 		</Unit>
-		<Unit filename="E:/C projects/Lock-free_queue/MS_queue.h">
+		<Unit filename="C:/Users/egrsa/CLionProjects/Lock-free_queue/ConsumerProducer/Producer.h">
 			<Option target="Lock_free_queue"/>
 		</Unit>
-		<Unit filename="E:/C projects/Lock-free_queue/Optimistic_lock_free_queue.c">
+		<Unit filename="C:/Users/egrsa/CLionProjects/Lock-free_queue/HelpStruct/queue_with_id.c">
 			<Option target="Lock_free_queue"/>
 		</Unit>
-		<Unit filename="E:/C projects/Lock-free_queue/Optimistic_lock_free_queue.h">
+		<Unit filename="C:/Users/egrsa/CLionProjects/Lock-free_queue/HelpStruct/queue_with_id.h">
 			<Option target="Lock_free_queue"/>
 		</Unit>
-		<Unit filename="E:/C projects/Lock-free_queue/Producer.c">
+		<Unit filename="C:/Users/egrsa/CLionProjects/Lock-free_queue/LFS/LFStack.c">
 			<Option target="Lock_free_queue"/>
 		</Unit>
-		<Unit filename="E:/C projects/Lock-free_queue/Producer.h">
+		<Unit filename="C:/Users/egrsa/CLionProjects/Lock-free_queue/LFS/LFStack.h">
 			<Option target="Lock_free_queue"/>
 		</Unit>
-		<Unit filename="E:/C projects/Lock-free_queue/main.c">
+		<Unit filename="C:/Users/egrsa/CLionProjects/Lock-free_queue/MSLFQ/MS_queue.c">
 			<Option target="Lock_free_queue"/>
 		</Unit>
-		<Unit filename="E:/C projects/Lock-free_queue/queue_with_id.c">
+		<Unit filename="C:/Users/egrsa/CLionProjects/Lock-free_queue/MSLFQ/MS_queue.h">
 			<Option target="Lock_free_queue"/>
 		</Unit>
-		<Unit filename="E:/C projects/Lock-free_queue/queue_with_id.h">
+		<Unit filename="C:/Users/egrsa/CLionProjects/Lock-free_queue/OptimisticLFQ/Optimistic_lock_free_queue.c">
 			<Option target="Lock_free_queue"/>
 		</Unit>
-		<Unit filename="E:/C projects/Lock-free_queue/CMakeLists.txt">
+		<Unit filename="C:/Users/egrsa/CLionProjects/Lock-free_queue/OptimisticLFQ/Optimistic_lock_free_queue.h">
+			<Option target="Lock_free_queue"/>
+		</Unit>
+		<Unit filename="C:/Users/egrsa/CLionProjects/Lock-free_queue/main.c">
+			<Option target="Lock_free_queue"/>
+		</Unit>
+		<Unit filename="C:/Users/egrsa/CLionProjects/Lock-free_queue/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

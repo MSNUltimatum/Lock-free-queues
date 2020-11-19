@@ -58,19 +58,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = C:\Users\Ultimatum\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\202.7660.37\bin\cmake\win\bin\cmake.exe
+CMAKE_COMMAND = C:\Users\egrsa\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\202.7660.37\bin\cmake\win\bin\cmake.exe
 
 # The command to remove a file.
-RM = C:\Users\Ultimatum\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\202.7660.37\bin\cmake\win\bin\cmake.exe -E rm -f
+RM = C:\Users\egrsa\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\202.7660.37\bin\cmake\win\bin\cmake.exe -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "E:\C projects\Lock-free_queue"
+CMAKE_SOURCE_DIR = C:\Users\egrsa\CLionProjects\Lock-free_queue
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "E:\C projects\Lock-free_queue\cmake-build-debug"
+CMAKE_BINARY_DIR = C:\Users\egrsa\CLionProjects\Lock-free_queue\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -78,7 +78,7 @@ CMAKE_BINARY_DIR = "E:\C projects\Lock-free_queue\cmake-build-debug"
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	C:\Users\Ultimatum\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\202.7660.37\bin\cmake\win\bin\cmake.exe -E echo "No interactive CMake dialog available."
+	C:\Users\egrsa\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\202.7660.37\bin\cmake\win\bin\cmake.exe -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -89,7 +89,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	C:\Users\Ultimatum\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\202.7660.37\bin\cmake\win\bin\cmake.exe --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	C:\Users\egrsa\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\202.7660.37\bin\cmake\win\bin\cmake.exe --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -99,9 +99,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "E:\C projects\Lock-free_queue\cmake-build-debug\CMakeFiles" "E:\C projects\Lock-free_queue\cmake-build-debug\CMakeFiles\progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\egrsa\CLionProjects\Lock-free_queue\cmake-build-debug\CMakeFiles C:\Users\egrsa\CLionProjects\Lock-free_queue\cmake-build-debug\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "E:\C projects\Lock-free_queue\cmake-build-debug\CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\egrsa\CLionProjects\Lock-free_queue\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -142,113 +142,167 @@ Lock_free_queue/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lock_free_queue.dir\build.make CMakeFiles/Lock_free_queue.dir/build
 .PHONY : Lock_free_queue/fast
 
-Consumer.obj: Consumer.c.obj
+ConsumerProducer/Consumer.obj: ConsumerProducer/Consumer.c.obj
 
-.PHONY : Consumer.obj
-
-# target to build an object file
-Consumer.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lock_free_queue.dir\build.make CMakeFiles/Lock_free_queue.dir/Consumer.c.obj
-.PHONY : Consumer.c.obj
-
-Consumer.i: Consumer.c.i
-
-.PHONY : Consumer.i
-
-# target to preprocess a source file
-Consumer.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lock_free_queue.dir\build.make CMakeFiles/Lock_free_queue.dir/Consumer.c.i
-.PHONY : Consumer.c.i
-
-Consumer.s: Consumer.c.s
-
-.PHONY : Consumer.s
-
-# target to generate assembly for a file
-Consumer.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lock_free_queue.dir\build.make CMakeFiles/Lock_free_queue.dir/Consumer.c.s
-.PHONY : Consumer.c.s
-
-MS_queue.obj: MS_queue.c.obj
-
-.PHONY : MS_queue.obj
+.PHONY : ConsumerProducer/Consumer.obj
 
 # target to build an object file
-MS_queue.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lock_free_queue.dir\build.make CMakeFiles/Lock_free_queue.dir/MS_queue.c.obj
-.PHONY : MS_queue.c.obj
+ConsumerProducer/Consumer.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lock_free_queue.dir\build.make CMakeFiles/Lock_free_queue.dir/ConsumerProducer/Consumer.c.obj
+.PHONY : ConsumerProducer/Consumer.c.obj
 
-MS_queue.i: MS_queue.c.i
+ConsumerProducer/Consumer.i: ConsumerProducer/Consumer.c.i
 
-.PHONY : MS_queue.i
+.PHONY : ConsumerProducer/Consumer.i
 
 # target to preprocess a source file
-MS_queue.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lock_free_queue.dir\build.make CMakeFiles/Lock_free_queue.dir/MS_queue.c.i
-.PHONY : MS_queue.c.i
+ConsumerProducer/Consumer.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lock_free_queue.dir\build.make CMakeFiles/Lock_free_queue.dir/ConsumerProducer/Consumer.c.i
+.PHONY : ConsumerProducer/Consumer.c.i
 
-MS_queue.s: MS_queue.c.s
+ConsumerProducer/Consumer.s: ConsumerProducer/Consumer.c.s
 
-.PHONY : MS_queue.s
+.PHONY : ConsumerProducer/Consumer.s
 
 # target to generate assembly for a file
-MS_queue.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lock_free_queue.dir\build.make CMakeFiles/Lock_free_queue.dir/MS_queue.c.s
-.PHONY : MS_queue.c.s
+ConsumerProducer/Consumer.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lock_free_queue.dir\build.make CMakeFiles/Lock_free_queue.dir/ConsumerProducer/Consumer.c.s
+.PHONY : ConsumerProducer/Consumer.c.s
 
-Optimistic_lock_free_queue.obj: Optimistic_lock_free_queue.c.obj
+ConsumerProducer/Producer.obj: ConsumerProducer/Producer.c.obj
 
-.PHONY : Optimistic_lock_free_queue.obj
+.PHONY : ConsumerProducer/Producer.obj
 
 # target to build an object file
-Optimistic_lock_free_queue.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lock_free_queue.dir\build.make CMakeFiles/Lock_free_queue.dir/Optimistic_lock_free_queue.c.obj
-.PHONY : Optimistic_lock_free_queue.c.obj
+ConsumerProducer/Producer.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lock_free_queue.dir\build.make CMakeFiles/Lock_free_queue.dir/ConsumerProducer/Producer.c.obj
+.PHONY : ConsumerProducer/Producer.c.obj
 
-Optimistic_lock_free_queue.i: Optimistic_lock_free_queue.c.i
+ConsumerProducer/Producer.i: ConsumerProducer/Producer.c.i
 
-.PHONY : Optimistic_lock_free_queue.i
+.PHONY : ConsumerProducer/Producer.i
 
 # target to preprocess a source file
-Optimistic_lock_free_queue.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lock_free_queue.dir\build.make CMakeFiles/Lock_free_queue.dir/Optimistic_lock_free_queue.c.i
-.PHONY : Optimistic_lock_free_queue.c.i
+ConsumerProducer/Producer.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lock_free_queue.dir\build.make CMakeFiles/Lock_free_queue.dir/ConsumerProducer/Producer.c.i
+.PHONY : ConsumerProducer/Producer.c.i
 
-Optimistic_lock_free_queue.s: Optimistic_lock_free_queue.c.s
+ConsumerProducer/Producer.s: ConsumerProducer/Producer.c.s
 
-.PHONY : Optimistic_lock_free_queue.s
+.PHONY : ConsumerProducer/Producer.s
 
 # target to generate assembly for a file
-Optimistic_lock_free_queue.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lock_free_queue.dir\build.make CMakeFiles/Lock_free_queue.dir/Optimistic_lock_free_queue.c.s
-.PHONY : Optimistic_lock_free_queue.c.s
+ConsumerProducer/Producer.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lock_free_queue.dir\build.make CMakeFiles/Lock_free_queue.dir/ConsumerProducer/Producer.c.s
+.PHONY : ConsumerProducer/Producer.c.s
 
-Producer.obj: Producer.c.obj
+HelpStruct/queue_with_id.obj: HelpStruct/queue_with_id.c.obj
 
-.PHONY : Producer.obj
+.PHONY : HelpStruct/queue_with_id.obj
 
 # target to build an object file
-Producer.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lock_free_queue.dir\build.make CMakeFiles/Lock_free_queue.dir/Producer.c.obj
-.PHONY : Producer.c.obj
+HelpStruct/queue_with_id.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lock_free_queue.dir\build.make CMakeFiles/Lock_free_queue.dir/HelpStruct/queue_with_id.c.obj
+.PHONY : HelpStruct/queue_with_id.c.obj
 
-Producer.i: Producer.c.i
+HelpStruct/queue_with_id.i: HelpStruct/queue_with_id.c.i
 
-.PHONY : Producer.i
+.PHONY : HelpStruct/queue_with_id.i
 
 # target to preprocess a source file
-Producer.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lock_free_queue.dir\build.make CMakeFiles/Lock_free_queue.dir/Producer.c.i
-.PHONY : Producer.c.i
+HelpStruct/queue_with_id.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lock_free_queue.dir\build.make CMakeFiles/Lock_free_queue.dir/HelpStruct/queue_with_id.c.i
+.PHONY : HelpStruct/queue_with_id.c.i
 
-Producer.s: Producer.c.s
+HelpStruct/queue_with_id.s: HelpStruct/queue_with_id.c.s
 
-.PHONY : Producer.s
+.PHONY : HelpStruct/queue_with_id.s
 
 # target to generate assembly for a file
-Producer.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lock_free_queue.dir\build.make CMakeFiles/Lock_free_queue.dir/Producer.c.s
-.PHONY : Producer.c.s
+HelpStruct/queue_with_id.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lock_free_queue.dir\build.make CMakeFiles/Lock_free_queue.dir/HelpStruct/queue_with_id.c.s
+.PHONY : HelpStruct/queue_with_id.c.s
+
+LFS/LFStack.obj: LFS/LFStack.c.obj
+
+.PHONY : LFS/LFStack.obj
+
+# target to build an object file
+LFS/LFStack.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lock_free_queue.dir\build.make CMakeFiles/Lock_free_queue.dir/LFS/LFStack.c.obj
+.PHONY : LFS/LFStack.c.obj
+
+LFS/LFStack.i: LFS/LFStack.c.i
+
+.PHONY : LFS/LFStack.i
+
+# target to preprocess a source file
+LFS/LFStack.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lock_free_queue.dir\build.make CMakeFiles/Lock_free_queue.dir/LFS/LFStack.c.i
+.PHONY : LFS/LFStack.c.i
+
+LFS/LFStack.s: LFS/LFStack.c.s
+
+.PHONY : LFS/LFStack.s
+
+# target to generate assembly for a file
+LFS/LFStack.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lock_free_queue.dir\build.make CMakeFiles/Lock_free_queue.dir/LFS/LFStack.c.s
+.PHONY : LFS/LFStack.c.s
+
+MSLFQ/MS_queue.obj: MSLFQ/MS_queue.c.obj
+
+.PHONY : MSLFQ/MS_queue.obj
+
+# target to build an object file
+MSLFQ/MS_queue.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lock_free_queue.dir\build.make CMakeFiles/Lock_free_queue.dir/MSLFQ/MS_queue.c.obj
+.PHONY : MSLFQ/MS_queue.c.obj
+
+MSLFQ/MS_queue.i: MSLFQ/MS_queue.c.i
+
+.PHONY : MSLFQ/MS_queue.i
+
+# target to preprocess a source file
+MSLFQ/MS_queue.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lock_free_queue.dir\build.make CMakeFiles/Lock_free_queue.dir/MSLFQ/MS_queue.c.i
+.PHONY : MSLFQ/MS_queue.c.i
+
+MSLFQ/MS_queue.s: MSLFQ/MS_queue.c.s
+
+.PHONY : MSLFQ/MS_queue.s
+
+# target to generate assembly for a file
+MSLFQ/MS_queue.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lock_free_queue.dir\build.make CMakeFiles/Lock_free_queue.dir/MSLFQ/MS_queue.c.s
+.PHONY : MSLFQ/MS_queue.c.s
+
+OptimisticLFQ/Optimistic_lock_free_queue.obj: OptimisticLFQ/Optimistic_lock_free_queue.c.obj
+
+.PHONY : OptimisticLFQ/Optimistic_lock_free_queue.obj
+
+# target to build an object file
+OptimisticLFQ/Optimistic_lock_free_queue.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lock_free_queue.dir\build.make CMakeFiles/Lock_free_queue.dir/OptimisticLFQ/Optimistic_lock_free_queue.c.obj
+.PHONY : OptimisticLFQ/Optimistic_lock_free_queue.c.obj
+
+OptimisticLFQ/Optimistic_lock_free_queue.i: OptimisticLFQ/Optimistic_lock_free_queue.c.i
+
+.PHONY : OptimisticLFQ/Optimistic_lock_free_queue.i
+
+# target to preprocess a source file
+OptimisticLFQ/Optimistic_lock_free_queue.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lock_free_queue.dir\build.make CMakeFiles/Lock_free_queue.dir/OptimisticLFQ/Optimistic_lock_free_queue.c.i
+.PHONY : OptimisticLFQ/Optimistic_lock_free_queue.c.i
+
+OptimisticLFQ/Optimistic_lock_free_queue.s: OptimisticLFQ/Optimistic_lock_free_queue.c.s
+
+.PHONY : OptimisticLFQ/Optimistic_lock_free_queue.s
+
+# target to generate assembly for a file
+OptimisticLFQ/Optimistic_lock_free_queue.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lock_free_queue.dir\build.make CMakeFiles/Lock_free_queue.dir/OptimisticLFQ/Optimistic_lock_free_queue.c.s
+.PHONY : OptimisticLFQ/Optimistic_lock_free_queue.c.s
 
 main.obj: main.c.obj
 
@@ -277,33 +331,6 @@ main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lock_free_queue.dir\build.make CMakeFiles/Lock_free_queue.dir/main.c.s
 .PHONY : main.c.s
 
-queue_with_id.obj: queue_with_id.c.obj
-
-.PHONY : queue_with_id.obj
-
-# target to build an object file
-queue_with_id.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lock_free_queue.dir\build.make CMakeFiles/Lock_free_queue.dir/queue_with_id.c.obj
-.PHONY : queue_with_id.c.obj
-
-queue_with_id.i: queue_with_id.c.i
-
-.PHONY : queue_with_id.i
-
-# target to preprocess a source file
-queue_with_id.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lock_free_queue.dir\build.make CMakeFiles/Lock_free_queue.dir/queue_with_id.c.i
-.PHONY : queue_with_id.c.i
-
-queue_with_id.s: queue_with_id.c.s
-
-.PHONY : queue_with_id.s
-
-# target to generate assembly for a file
-queue_with_id.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Lock_free_queue.dir\build.make CMakeFiles/Lock_free_queue.dir/queue_with_id.c.s
-.PHONY : queue_with_id.c.s
-
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -313,24 +340,27 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Lock_free_queue
-	@echo ... Consumer.obj
-	@echo ... Consumer.i
-	@echo ... Consumer.s
-	@echo ... MS_queue.obj
-	@echo ... MS_queue.i
-	@echo ... MS_queue.s
-	@echo ... Optimistic_lock_free_queue.obj
-	@echo ... Optimistic_lock_free_queue.i
-	@echo ... Optimistic_lock_free_queue.s
-	@echo ... Producer.obj
-	@echo ... Producer.i
-	@echo ... Producer.s
+	@echo ... ConsumerProducer/Consumer.obj
+	@echo ... ConsumerProducer/Consumer.i
+	@echo ... ConsumerProducer/Consumer.s
+	@echo ... ConsumerProducer/Producer.obj
+	@echo ... ConsumerProducer/Producer.i
+	@echo ... ConsumerProducer/Producer.s
+	@echo ... HelpStruct/queue_with_id.obj
+	@echo ... HelpStruct/queue_with_id.i
+	@echo ... HelpStruct/queue_with_id.s
+	@echo ... LFS/LFStack.obj
+	@echo ... LFS/LFStack.i
+	@echo ... LFS/LFStack.s
+	@echo ... MSLFQ/MS_queue.obj
+	@echo ... MSLFQ/MS_queue.i
+	@echo ... MSLFQ/MS_queue.s
+	@echo ... OptimisticLFQ/Optimistic_lock_free_queue.obj
+	@echo ... OptimisticLFQ/Optimistic_lock_free_queue.i
+	@echo ... OptimisticLFQ/Optimistic_lock_free_queue.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
-	@echo ... queue_with_id.obj
-	@echo ... queue_with_id.i
-	@echo ... queue_with_id.s
 .PHONY : help
 
 

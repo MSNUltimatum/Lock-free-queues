@@ -4,12 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "E:/C projects/Lock-free_queue/Consumer.c" "E:/C projects/Lock-free_queue/cmake-build-debug/CMakeFiles/Lock_free_queue.dir/Consumer.c.obj"
-  "E:/C projects/Lock-free_queue/MS_queue.c" "E:/C projects/Lock-free_queue/cmake-build-debug/CMakeFiles/Lock_free_queue.dir/MS_queue.c.obj"
-  "E:/C projects/Lock-free_queue/Optimistic_lock_free_queue.c" "E:/C projects/Lock-free_queue/cmake-build-debug/CMakeFiles/Lock_free_queue.dir/Optimistic_lock_free_queue.c.obj"
-  "E:/C projects/Lock-free_queue/Producer.c" "E:/C projects/Lock-free_queue/cmake-build-debug/CMakeFiles/Lock_free_queue.dir/Producer.c.obj"
-  "E:/C projects/Lock-free_queue/main.c" "E:/C projects/Lock-free_queue/cmake-build-debug/CMakeFiles/Lock_free_queue.dir/main.c.obj"
-  "E:/C projects/Lock-free_queue/queue_with_id.c" "E:/C projects/Lock-free_queue/cmake-build-debug/CMakeFiles/Lock_free_queue.dir/queue_with_id.c.obj"
+  "C:/Users/egrsa/CLionProjects/Lock-free_queue/ConsumerProducer/Consumer.c" "C:/Users/egrsa/CLionProjects/Lock-free_queue/cmake-build-debug/CMakeFiles/Lock_free_queue.dir/ConsumerProducer/Consumer.c.obj"
+  "C:/Users/egrsa/CLionProjects/Lock-free_queue/ConsumerProducer/Producer.c" "C:/Users/egrsa/CLionProjects/Lock-free_queue/cmake-build-debug/CMakeFiles/Lock_free_queue.dir/ConsumerProducer/Producer.c.obj"
+  "C:/Users/egrsa/CLionProjects/Lock-free_queue/HelpStruct/queue_with_id.c" "C:/Users/egrsa/CLionProjects/Lock-free_queue/cmake-build-debug/CMakeFiles/Lock_free_queue.dir/HelpStruct/queue_with_id.c.obj"
+  "C:/Users/egrsa/CLionProjects/Lock-free_queue/LFS/LFStack.c" "C:/Users/egrsa/CLionProjects/Lock-free_queue/cmake-build-debug/CMakeFiles/Lock_free_queue.dir/LFS/LFStack.c.obj"
+  "C:/Users/egrsa/CLionProjects/Lock-free_queue/MSLFQ/MS_queue.c" "C:/Users/egrsa/CLionProjects/Lock-free_queue/cmake-build-debug/CMakeFiles/Lock_free_queue.dir/MSLFQ/MS_queue.c.obj"
+  "C:/Users/egrsa/CLionProjects/Lock-free_queue/OptimisticLFQ/Optimistic_lock_free_queue.c" "C:/Users/egrsa/CLionProjects/Lock-free_queue/cmake-build-debug/CMakeFiles/Lock_free_queue.dir/OptimisticLFQ/Optimistic_lock_free_queue.c.obj"
+  "C:/Users/egrsa/CLionProjects/Lock-free_queue/main.c" "C:/Users/egrsa/CLionProjects/Lock-free_queue/cmake-build-debug/CMakeFiles/Lock_free_queue.dir/main.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

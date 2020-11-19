@@ -1,3 +1,3 @@
-C:\Users\Ultimatum\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\202.7660.37\bin\cmake\win\bin\cmake.exe -E rm -f CMakeFiles\Lock_free_queue.dir/objects.a
-"E:\C projects\Mingw\mingw32\bin\ar.exe" cr CMakeFiles\Lock_free_queue.dir/objects.a @CMakeFiles\Lock_free_queue.dir\objects1.rsp
-"E:\C projects\Mingw\mingw32\bin\gcc.exe" -g   -Wl,--whole-archive CMakeFiles\Lock_free_queue.dir/objects.a -Wl,--no-whole-archive  -o Lock_free_queue.exe -Wl,--out-implib,libLock_free_queue.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Lock_free_queue.dir\linklibs.rsp
+C:\Users\egrsa\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\202.7660.37\bin\cmake\win\bin\cmake.exe -E rm -f CMakeFiles\Lock_free_queue.dir/objects.a
+C:\Coding\MinGW\mingw32\bin\ar.exe cr CMakeFiles\Lock_free_queue.dir/objects.a @CMakeFiles\Lock_free_queue.dir\objects1.rsp
+C:\Coding\MinGW\mingw32\bin\gcc.exe -g   -Wl,--whole-archive CMakeFiles\Lock_free_queue.dir/objects.a -Wl,--no-whole-archive  -o Lock_free_queue.exe -Wl,--out-implib,libLock_free_queue.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Lock_free_queue.dir\linklibs.rsp
