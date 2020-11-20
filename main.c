@@ -8,8 +8,8 @@
 #include "ConsumerProducer/Consumer.h"
 #include <pthread.h>
 #include "HelpStruct/queue_with_id.h"
-#define PRODUCER_COUNT 1
-#define CONSUMER_COUNT 1
+#define PRODUCER_COUNT 5
+#define CONSUMER_COUNT 5
 
 
 int main() {

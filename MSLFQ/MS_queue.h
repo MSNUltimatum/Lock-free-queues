@@ -11,8 +11,8 @@ typedef struct queue_node{
 } node_q;
 
 typedef struct LFqueue{
-    struct queue_node *head;
-    struct queue_node *tail;
+    volatile struct queue_node *head;
+    volatile struct queue_node *tail;
     unsigned int maxQueueSize;
     unsigned int size;
 } lfqueue;

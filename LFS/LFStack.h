@@ -26,17 +26,18 @@ typedef struct {
     int size;
 } lfstack_t;
 
-static int lfs_size(lfstack_t *lstack)
-{
+static int lfs_size(lfstack_t *lstack) {
     return atomic_load(&lstack->size);
 }
 
-static void lst_free(lfstack_t *lstack)
-{
+static void lst_free(lfstack_t *lstack) {
     free(lstack->node_buffer);
 }
 
-int   lfs_init(lfstack_t *lstack, int max_size);
-int   lfs_push(lfstack_t *lstack, void *value);
+int lfs_init(lfstack_t *lstack, int max_size);
+
+int lfs_push(lfstack_t *lstack, void *value);
+
 void *lfs_pop(lfstack_t *lstack);
+
 #endif //LOCK_FREE_QUEUE_LFSTACK_H
