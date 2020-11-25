@@ -2,14 +2,14 @@
 // Created by Ultimatum on 20.11.2020.
 //
 
-#ifndef LOCK_FREE_QUEUE_LINKEDLIST_H
-#define LOCK_FREE_QUEUE_LINKEDLIST_H
+#ifndef LOCK_FREE_QUEUE_LIST_H
+#define LOCK_FREE_QUEUE_LIST_H
 
-#define L 256
+#define MAXLENGTH 256
 #define K 4
 
 struct list_t {
-    void *list[L];
+    void *list[MAXLENGTH];
     int head;
     int tail;
 };
@@ -24,6 +24,6 @@ int list_lookup(struct list_t *list, void *node);
 
 int list_popAll(struct list_t *list, void **output);
 
-void sort(struct list_t *list);
+void sort(struct list_t* list);
 
-#endif //LOCK_FREE_QUEUE_LINKEDLIST_H
+#endif //LOCK_FREE_QUEUE_LIST_H

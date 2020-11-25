@@ -5,45 +5,96 @@
 #include <stdlib.h>
 #include "HP.h"
 
-void* HP[K];
-unsigned count = 0;
-void* dlist[];
+void HP_init(HP *hp) {
+    hp->H = 0;
+    hp->headHPRec = NULL;
+}
 
-void RetireNode(void* node){
-    dlist[count++] = node;
+int R() {
+    return MAXLENGTH / 2;
+}
 
-    if(count == R){
-        Scan();
+void scan(HP *hp, struct hprec_t *myhprec) {
+    struct list_t *plist = list_init();
+    struct hprec_t *hprec = hp->headHPRec;
+    for (; hprec != NULL; hprec = hprec->next)
+        for (int i = 0; i < K; i++)
+            if (hprec->HP[i] != NULL)
+                list_push(plist, hprec->HP[i]);
+
+    sort(myhprec->rlist);
+
+    void **tmplist = (void **) malloc(MAXLENGTH * sizeof(void *));
+    int length = list_popAll(myhprec->rlist, tmplist);
+    myhprec->rcount = 0;
+
+    for (int i = 0; i < length; i++)
+        if (list_lookup(plist, tmplist[i])) {
+            list_push(myhprec->rlist, tmplist[i]);
+            myhprec->rcount++;
+        } else
+            free(tmplist[i]);
+    free(tmplist);
+}
+
+void help_scan(HP *hp, struct hprec_t *myhprec) {
+    struct hprec_t *hprec = hp->headHPRec;
+    for (; hprec; hprec = hprec->next) {
+        if (hprec->active ||
+            !__sync_bool_compare_and_swap(&hprec->active, 0, 1))
+            continue;
+        while (hprec->rcount > 0) {
+            void *node = list_pop(hprec->rlist);
+            hprec->rcount--;
+            list_push(myhprec->rlist, node);
+            myhprec->rcount++;
+            if (myhprec->rcount >= R()) scan(hp, myhprec);
+        }
+        hprec->active = 0;
     }
 }
 
-void Scan(){
-    unsigned i;
-    unsigned p = 0;
-    unsigned new_count = 0;
+struct hprec_t *newHPRec() {
+    struct hprec_t *hprec = malloc(sizeof(struct hprec_t));
+    hprec->active = 1;
+    hprec->rcount = 0;
+    for (int i = 0; i < K; i++)
+        hprec->HP[i] = NULL;
+    hprec->next = NULL;
+    hprec->rlist = list_init();
+    return hprec;
+}
 
-    void * hptr, plist[], new_dlist[];
-
-    for (unsigned t=0; t < P; ++t) {
-        void ** pHPThread = get_thread_data(t)->HP ;
-        for (i = 0; i < K; ++i) {
-            hptr = pHPThread[i];
-            if ( hptr != nullptr )
-                plist[p++] = hptr;
-        }
-    }
-
-    sort(plist);
-
-    for ( i = 0; i < R; ++i ) {
-        if ( binary_search(dlist[i], plist))
-            new_dlist[new_dcount++] = dlist[i];
+struct hprec_t *allocate_HPRec(HP *hp) {
+    struct hprec_t *hprec = hp->headHPRec;
+    for (; hprec; hprec = hprec->next)
+        if (hprec->active ||
+            !__sync_bool_compare_and_swap(&hprec->active, 0, 1))
+            continue;
         else
-            free(dlist[i]);
-    }
+            return hprec;
 
-    // Stage 4 – формирование нового массива отложенных элементов.
-    for (i = 0; i < new_count; ++i )
-        dlist[i] = new_dlist[i];
-    dcount = new_dcount;
+    __sync_fetch_and_add(&hp->H, K);
+
+    struct hprec_t *myhprec = newHPRec();
+    struct hprec_t *oldHead;
+    do {
+        oldHead = hp->headHPRec;
+        myhprec->next = oldHead;
+    } while (!__sync_bool_compare_and_swap(&hp->headHPRec, oldHead, myhprec));
+    return myhprec;
+}
+
+void retire_node(HP *hp, struct hprec_t *myhprec, void *node) {
+    for (int i = 0; i < K; i++)
+        if (myhprec->HP[i] == node) {
+            list_push(myhprec->rlist, node);
+            myhprec->rcount++;
+            myhprec->HP[i] = NULL;
+            if (myhprec->rcount >= R()) {
+                scan(hp, myhprec);
+                help_scan(hp, myhprec);
+            }
+            break;
+        }
 }

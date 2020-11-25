@@ -5,20 +5,26 @@
 #ifndef LOCK_FREE_QUEUE_MS_QUEUE_H
 #define LOCK_FREE_QUEUE_MS_QUEUE_H
 
-typedef struct queue_node{
-    void* data;
+#include "../HelpStruct/HP.h"
+
+typedef struct queue_node {
+    void *data;
     struct queue_node *next;
 } node_q;
 
-typedef struct LFqueue{
+typedef struct LFqueue {
     volatile struct queue_node *head;
     volatile struct queue_node *tail;
     unsigned int maxQueueSize;
     unsigned int size;
 } lfqueue;
 
-void init(lfqueue *lfqueue1, int maxQueueSize);
-int enqueue(lfqueue *lfqueue1, void* data);
-void *dequeue(lfqueue *lfqueue1);
+void initMSqueue(lfqueue *lfqueue1, int maxQueueSize);
+
+int enqueue(lfqueue *lfqueue1, void *data, struct hprec_t *hprec);
+
+void *dequeue(lfqueue *lfqueue1, struct hprec_t *hprect, HP *hp);
+
 void freeQueue(lfqueue *lfqueue1);
+
 #endif //LOCK_FREE_QUEUE_MS_QUEUE_H

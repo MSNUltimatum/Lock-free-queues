@@ -5,17 +5,17 @@
 #include "Consumer.h"
 #include <stdio.h>
 #include <zconf.h>
-#include "../LFS/LFStack.h"
+#include "../MSLFQ/MS_queue.h"
 #include "../HelpStruct/queue_with_id.h"
 
 void* consumer(void* arg){
-    struct queue_with_id *stack = arg;
+    struct queue_with_id *queue = arg;
+    struct hprec_t *hprec = allocate_HPRec(queue->hp);
     int res = 0;
-    sleep(5);
     do{
-        res = (int) lfs_pop(stack->lfstack);
+        res = (int) dequeue(queue->lfqueue1, hprec, queue->hp);
         if(res != 0) {
-            printf("Consumer with id = %d, get %d\n", stack->id, res);
+            printf("Consumer with id = %d, get %d\n", queue->id, res);
         }
     }while (1);
 }
