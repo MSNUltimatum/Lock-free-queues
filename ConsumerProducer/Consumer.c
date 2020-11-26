@@ -4,7 +4,6 @@
 
 #include "Consumer.h"
 #include <stdio.h>
-#include <zconf.h>
 #include "../MSLFQ/MS_queue.h"
 #include "../HelpStruct/queue_with_id.h"
 

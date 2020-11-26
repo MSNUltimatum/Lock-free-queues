@@ -3,8 +3,8 @@
 //
 #include "MS_queue.h"
 #include <malloc.h>
-#include <zconf.h>
 #include <stdatomic.h>
+#include "../HelpStruct/exp_backoff.h"
 
 #define CAS __sync_bool_compare_and_swap
 #define INCREMENT __atomic_fetch_add
@@ -42,6 +42,7 @@ int enqueue(struct LFqueue *lfqueue1, void* data, struct hprec_t* hprec){
         } else {
             continue;
         }
+        backoff(10, 1000, 2);
     }
     CAS(&lfqueue1->tail, tail, newNode);
     hprec->HP[0] = NULL;
@@ -77,6 +78,7 @@ void *dequeue(lfqueue *lfqueue1, struct hprec_t* hprec, HP* hp) {
                 hprec->HP[1] = NULL;
             }
         }
+        backoff(10, 1000, 2);
     }
     return result;
 }

@@ -9,8 +9,8 @@
 #include <pthread.h>
 #include "HelpStruct/HP.h"
 #include "HelpStruct/queue_with_id.h"
-#define PRODUCER_COUNT 5
-#define CONSUMER_COUNT 3
+#define PRODUCER_COUNT 4
+#define CONSUMER_COUNT 4
 
 
 int main() {

@@ -2,7 +2,6 @@
 // Created by Ultimatum on 28.10.2020.
 //
 
-#include <crtdbg.h>
 #include "Optimistic_lock_free_queue.h"
 #include <malloc.h>
 #include <stdatomic.h>
