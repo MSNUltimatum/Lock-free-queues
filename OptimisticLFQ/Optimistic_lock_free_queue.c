@@ -5,6 +5,7 @@
 #include "Optimistic_lock_free_queue.h"
 #include <malloc.h>
 #include <stdatomic.h>
+#include "../HelpStruct/exp_backoff.h"
 #define CAS __sync_bool_compare_and_swap
 #define QUEUE_EMPTY NULL
 
@@ -35,6 +36,7 @@ void enqueueOpt(struct queue* q, void* val){
            tail.ptr->prev = new_pointer(nd, tail.tag);
            break;
         }
+        backoff(10, 1000, 2);
     }
 }
 
@@ -60,6 +62,7 @@ void* dequeueOpt(struct queue* q){
                 return QUEUE_EMPTY;
             }
         }
+        backoff(10, 1000, 2);
     }
 }
 

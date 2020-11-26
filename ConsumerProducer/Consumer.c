@@ -14,7 +14,7 @@ void* consumer(void* arg){
     do{
         res = (int) dequeue(queue->lfqueue1, hprec, queue->hp);
         if(res != 0) {
-            printf("Consumer with id = %d, get %d\n", queue->id, res);
+//            printf("Consumer with id = %d, get %d\n", queue->id, res);
         }
     }while (1);
 }
