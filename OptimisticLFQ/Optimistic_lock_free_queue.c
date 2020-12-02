@@ -7,7 +7,7 @@
 #include <stdatomic.h>
 #include "../HelpStruct/exp_backoff.h"
 #define CAS __sync_bool_compare_and_swap
-#define QUEUE_EMPTY NULL
+#define QUEUE_EMPTY -1
 
 struct node *new_node(void* val);
 
@@ -36,7 +36,7 @@ void enqueueOpt(struct queue* q, void* val){
            tail.ptr->prev = new_pointer(nd, tail.tag);
            break;
         }
-        backoff(10, 1000, 2);
+        backoff(10, 1000, 2, 1250000);
     }
 }
 
@@ -62,7 +62,7 @@ void* dequeueOpt(struct queue* q){
                 return QUEUE_EMPTY;
             }
         }
-        backoff(10, 1000, 2);
+        backoff(10, 1000, 2, 1250000);
     }
 }
 

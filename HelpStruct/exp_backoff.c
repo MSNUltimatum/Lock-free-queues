@@ -5,9 +5,9 @@
 #include <time.h>
 #include "exp_backoff.h"
 
-void backoff(int nInitial, int nBound, int nStep){
+void backoff(int nInitial, int nBound, int nStep, long time){
     int nCurrent = nInitial;
-    struct timespec tw = {0, 1250000};
+    struct timespec tw = {0, time};
     struct timespec tr;
     for(int k = 0; k < nCurrent; k++){
         nanosleep(&tw, &tr);

@@ -26,26 +26,24 @@ int enqueue(struct LFqueue *lfqueue1, void* data, struct hprec_t* hprec){
     while (1) {
         tail = lfqueue1->tail;
         hprec->HP[0] = tail;
-        if (lfqueue1->tail != tail) continue;
-        struct queue_node *next = tail->next;
-        if(atomic_load(&lfqueue1->size) < atomic_load(&lfqueue1->maxQueueSize)) {
-            if (tail == lfqueue1->tail) {
-                if (next == NULL) {
-                    if (CAS(&tail->next, next, newNode)) {
-                        INCREMENT(&lfqueue1->size, 1, __ATOMIC_SEQ_CST);
-                        break;
-                    }
-                } else {
-                    CAS(&lfqueue1->tail, tail, next);
-                }
+//        if(atomic_load(&lfqueue1->size) < atomic_load(&lfqueue1->maxQueueSize)) {
+            if (lfqueue1->tail != tail) continue;
+            struct queue_node *next = tail->next;
+            if (lfqueue1->tail != tail) continue;
+            if (next != NULL) {
+                __sync_bool_compare_and_swap(&lfqueue1->tail, tail, next);
+                continue;
             }
-        } else {
-            continue;
-        }
-        backoff(10, 1000, 2);
+            if (__sync_bool_compare_and_swap(&tail->next, NULL, newNode)) {
+                INCREMENT(&lfqueue1->size, 1, __ATOMIC_SEQ_CST);
+                break;
+            }
+//        }
+//        backoff(10, 1000, 2, 12500);
     }
     CAS(&lfqueue1->tail, tail, newNode);
     hprec->HP[0] = NULL;
+    return 0;
 }
 
 void *dequeue(lfqueue *lfqueue1, struct hprec_t* hprec, HP* hp) {
@@ -55,31 +53,25 @@ void *dequeue(lfqueue *lfqueue1, struct hprec_t* hprec, HP* hp) {
         head = lfqueue1->head;
         hprec->HP[0] = head;
         if(lfqueue1->head != head) continue;
-        node_q *tail = lfqueue1->tail;
-        node_q *nextHead = head->next;
-        hprec->HP[1] = nextHead;
-        if(nextHead == NULL){//TODO backoff
+        struct queue_node *t = lfqueue1->tail;
+        struct queue_node *next = head->next;
+        hprec->HP[1] = next;
+        if(lfqueue1->head != head) continue;
+        if(next == NULL) return -1;
+        if(head == t) {
+            CAS(&lfqueue1->tail, t, next);
             continue;
         }
-        if (head == lfqueue1->head) {
-            if (head == tail) {
-                if (nextHead == NULL) {
-                    return QUEUE_EMPTY;
-                }
-                CAS(&lfqueue1->tail, tail, nextHead);
-            } else {
-                result = nextHead->data;
-                if (CAS(&lfqueue1->head, head, nextHead)) {
-                    INCREMENT(&lfqueue1->size, -1, __ATOMIC_SEQ_CST);
-                    break;
-                }
-                retire_node(hp, hprec, head);
-                hprec->HP[0] = NULL;
-                hprec->HP[1] = NULL;
-            }
+        result = next->data;
+        if(CAS(&lfqueue1->head, head, next)) {
+            INCREMENT(&lfqueue1->size, -1, __ATOMIC_SEQ_CST);
+            break;
         }
-        backoff(10, 1000, 2);
+//        backoff(10, 1000, 2, 12500);
     }
+    retire_node(hp, hprec, head);
+    hprec->HP[0] = NULL;
+    hprec->HP[1] = NULL;
     return result;
 }
 

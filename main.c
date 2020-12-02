@@ -10,7 +10,7 @@
 #include "HelpStruct/HP.h"
 #include "HelpStruct/queue_with_id.h"
 #define PRODUCER_COUNT 4
-#define CONSUMER_COUNT 4
+#define CONSUMER_COUNT 1
 
 
 int main() {
@@ -19,13 +19,14 @@ int main() {
     initMSqueue(lfqueue, 10);
     HP_init(hp);
     pthread_t threads[CONSUMER_COUNT + PRODUCER_COUNT];
-
+    int pf = 0;
 
     struct queue_with_id producerQueues[PRODUCER_COUNT];
     for (int i = 0; i < PRODUCER_COUNT; ++i) {
         producerQueues[i].lfqueue1 = lfqueue;
         producerQueues[i].id = i + 1;
         producerQueues[i].hp = hp;
+        producerQueues[i].producerFinished = &pf;
     }
 
     struct queue_with_id consumerQueue[CONSUMER_COUNT];
@@ -33,19 +34,22 @@ int main() {
         consumerQueue[i].lfqueue1 = lfqueue;
         consumerQueue[i].id = i + 1;
         consumerQueue[i].hp = hp;
+        consumerQueue[i].producerFinished = &pf;
     }
-
     for (int i = 0; i < PRODUCER_COUNT; ++i) {
         pthread_create(&threads[i], NULL, producer, &producerQueues[i]);
     }
 
     for (int i = 0; i < CONSUMER_COUNT; ++i) {
-        pthread_create(&threads[i], NULL, consumer, &consumerQueue[i]);
+        pthread_create(&threads[PRODUCER_COUNT + i], NULL, consumer, &consumerQueue[i]);
     }
 
-    void *t = NULL;
-    for (int i = 0; i < 4; ++i) {
+    time_t start, end;
+    start = time(NULL);
+    for (int i = 0; i < PRODUCER_COUNT + CONSUMER_COUNT; ++i) {
         pthread_join(threads[i], NULL);
     }
+    end = time(NULL);
+    printf("The interval was %.2f seconds", difftime(end, start));
     return 0;
 }
