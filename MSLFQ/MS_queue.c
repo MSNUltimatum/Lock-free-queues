@@ -39,7 +39,7 @@ int enqueue(struct LFqueue *lfqueue1, void* data, struct hprec_t* hprec){
                 break;
             }
 //        }
-//        backoff(10, 1000, 2, 12500);
+        backoff(5, 1000, 2, 1250);
     }
     CAS(&lfqueue1->tail, tail, newNode);
     hprec->HP[0] = NULL;
@@ -67,7 +67,7 @@ void *dequeue(lfqueue *lfqueue1, struct hprec_t* hprec, HP* hp) {
             INCREMENT(&lfqueue1->size, -1, __ATOMIC_SEQ_CST);
             break;
         }
-//        backoff(10, 1000, 2, 12500);
+        backoff(5, 1000, 2, 1250);
     }
     retire_node(hp, hprec, head);
     hprec->HP[0] = NULL;

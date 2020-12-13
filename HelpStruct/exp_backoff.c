@@ -13,7 +13,4 @@ void backoff(int nInitial, int nBound, int nStep, long time){
         nanosleep(&tw, &tr);
     }
 
-    nCurrent *= nStep;
-    if(nCurrent > nBound)
-        nCurrent = nBound;
 }

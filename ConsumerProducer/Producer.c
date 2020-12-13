@@ -3,15 +3,15 @@
 //
 #include <stdio.h>
 #include "Producer.h"
-#include "../MSLFQ/MS_queue.h"
+#include "../OptimisticLFQ/Optimistic_lock_free_queue.h"
 #include "../HelpStruct/queue_with_id.h"
 
 void *producer(void *arg){
     struct queue_with_id *queue = arg;
-    struct hprec_t *hprec = allocate_HPRec(queue->hp);
+   // struct hprec_t *hprec = allocate_HPRec(queue->hp);
     int number = 1;
-    for(int i = 1;i < 1000000; i++) {
-        enqueue(queue->lfqueue1, (void *) i, hprec);
+    for(int i = 1;i < 10000000; i++) {
+        enqueueOpt(queue->lfqueue1, (void *) i);
 //        printf("Producer with id = %d insert %d\n",queue->id, number);
         number += 1;
     }

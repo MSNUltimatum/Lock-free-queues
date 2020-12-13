@@ -4,13 +4,14 @@
 
 #ifndef LOCK_FREE_QUEUE_QUEUE_WITH_ID_H
 #define LOCK_FREE_QUEUE_QUEUE_WITH_ID_H
-#include "../MSLFQ/MS_queue.h"
+#include "../OptimisticLFQ/Optimistic_lock_free_queue.h"
 #include "HP.h"
 
 struct queue_with_id{
-    lfqueue *lfqueue1;
+    struct queue *lfqueue1;
     int id;
     HP *hp;
     int* producerFinished;
+    int poducerCount;
 };
 #endif //LOCK_FREE_QUEUE_QUEUE_WITH_ID_H
