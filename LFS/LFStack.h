@@ -20,13 +20,14 @@ struct lfs_head {
 };
 
 typedef struct {
-    struct lfs_node *node_buffer;
-    struct lfs_head head;
-    struct lfs_head free;
-    int size;
+     struct lfs_node *node_buffer;
+    _Atomic struct lfs_head head;
+    _Atomic struct lfs_head free;
+    _Atomic int size;
 } lfstack_t;
 
-static int lfs_size(lfstack_t *lstack) {
+static inline size_t lstack_size(lfstack_t *lstack)
+{
     return atomic_load(&lstack->size);
 }
 

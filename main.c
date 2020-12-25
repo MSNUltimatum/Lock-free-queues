@@ -2,7 +2,7 @@
 // Created by Ultimatum on 24.10.2020.
 //
 #include <stdio.h>
-#include "OptimisticLFQ/Optimistic_lock_free_queue.h"
+#include "LFS/LFStack.h"
 #include <malloc.h>
 #include "ConsumerProducer/Producer.h"
 #include "ConsumerProducer/Consumer.h"
@@ -14,16 +14,16 @@
 
 
 int main() {
-    struct queue *lfqueue = calloc(1, sizeof(struct queue));
+    lfstack_t *lfstack = calloc(1, sizeof(lfstack_t));
 //    HP* hp =  malloc(sizeof(HP));
-    initQueue(lfqueue);
+    lfs_init(lfstack, 3163);
 //    HP_init(hp);
     pthread_t threads[CONSUMER_COUNT + PRODUCER_COUNT];
     int pf = 0;
 
     struct queue_with_id producerQueues[PRODUCER_COUNT];
     for (int i = 0; i < PRODUCER_COUNT; ++i) {
-        producerQueues[i].lfqueue1 = lfqueue;
+        producerQueues[i].lfqueue1 = lfstack;
         producerQueues[i].id = i + 1;
         //producerQueues[i].hp = hp;
         producerQueues[i].producerFinished = &pf;
@@ -31,7 +31,7 @@ int main() {
 
     struct queue_with_id consumerQueue[CONSUMER_COUNT];
     for (int i = 0; i < CONSUMER_COUNT; ++i) {
-        consumerQueue[i].lfqueue1 = lfqueue;
+        consumerQueue[i].lfqueue1 = lfstack;
         consumerQueue[i].id = i + 1;
         //consumerQueue[i].hp = hp;
         consumerQueue[i].producerFinished = &pf;

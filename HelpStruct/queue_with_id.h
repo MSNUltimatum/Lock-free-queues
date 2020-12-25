@@ -4,11 +4,11 @@
 
 #ifndef LOCK_FREE_QUEUE_QUEUE_WITH_ID_H
 #define LOCK_FREE_QUEUE_QUEUE_WITH_ID_H
-#include "../OptimisticLFQ/Optimistic_lock_free_queue.h"
+#include "../LFS/LFStack.h"
 #include "HP.h"
 
 struct queue_with_id{
-    struct queue *lfqueue1;
+    lfstack_t *lfqueue1;
     int id;
     HP *hp;
     int* producerFinished;

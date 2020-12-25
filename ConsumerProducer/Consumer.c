@@ -12,12 +12,12 @@ void* consumer(void* arg){
     //struct hprec_t *hprec = allocate_HPRec(queue->hp);
     int res;
     do{
-        res = (int) dequeueOpt(queue->lfqueue1);
+        res = (int) lfs_pop(queue->lfqueue1);
         if(res == -1 && *queue->producerFinished == queue->poducerCount){
             break;
         }
 //        if(res != -1)
-//            printf("%d %d\n", queue->id,res);
+//            printf("%d %d\n", queue->id, res);
     } while(1);
     return 0;
 }

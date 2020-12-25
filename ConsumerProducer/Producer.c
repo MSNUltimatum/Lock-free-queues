@@ -11,7 +11,7 @@ void *producer(void *arg){
    // struct hprec_t *hprec = allocate_HPRec(queue->hp);
     int number = 1;
     for(int i = 1;i < 10000000; i++) {
-        enqueueOpt(queue->lfqueue1, (void *) i);
+        lfs_push(queue->lfqueue1, (void *) i);
 //        printf("Producer with id = %d insert %d\n",queue->id, number);
         number += 1;
     }
