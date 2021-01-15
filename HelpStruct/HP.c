@@ -1,33 +1,27 @@
 //
 // Created by Ultimatum on 20.11.2020.
 //
-
+#include <stdbool.h>
+#include <malloc.h>
 #include <stdlib.h>
+
+#include "list.h"
 #include "HP.h"
 
-void HP_init(HP *hp) {
-    hp->H = 0;
-    hp->headHPRec = NULL;
+int R(int H) {
+    return L / 2;
 }
 
-int R() {
-    return MAXLENGTH / 2;
-}
-
-void scan(HP *hp, struct hprec_t *myhprec) {
-    struct list_t *plist = list_init();
-    struct hprec_t *hprec = hp->headHPRec;
+void scan(HP *hp, struct hprectype *myhprec) {
+    struct listtype *plist = list_init();
+    struct hprectype *hprec = hp->headHPRec;
     for (; hprec != NULL; hprec = hprec->next)
         for (int i = 0; i < K; i++)
             if (hprec->HP[i] != NULL)
                 list_push(plist, hprec->HP[i]);
-
-    sort(myhprec->rlist);
-
-    void **tmplist = (void **) malloc(MAXLENGTH * sizeof(void *));
-    int length = list_popAll(myhprec->rlist, tmplist);
+    void **tmplist = (void **) malloc(L * sizeof(void *));
+    int length = list_popall(myhprec->rlist, tmplist);
     myhprec->rcount = 0;
-
     for (int i = 0; i < length; i++)
         if (list_lookup(plist, tmplist[i])) {
             list_push(myhprec->rlist, tmplist[i]);
@@ -37,26 +31,33 @@ void scan(HP *hp, struct hprec_t *myhprec) {
     free(tmplist);
 }
 
-void help_scan(HP *hp, struct hprec_t *myhprec) {
-    struct hprec_t *hprec = hp->headHPRec;
+void help_scan(HP *hp, struct hprectype *myhprec) {
+    struct hprectype *hprec = hp->headHPRec;
     for (; hprec; hprec = hprec->next) {
         if (hprec->active ||
-            !__sync_bool_compare_and_swap(&hprec->active, 0, 1))
+            !__sync_bool_compare_and_swap(&hprec->active, false, true))
             continue;
         while (hprec->rcount > 0) {
             void *node = list_pop(hprec->rlist);
             hprec->rcount--;
             list_push(myhprec->rlist, node);
             myhprec->rcount++;
-            if (myhprec->rcount >= R()) scan(hp, myhprec);
+            if (myhprec->rcount >= R(hp->H)) scan(hp, myhprec);
         }
-        hprec->active = 0;
+        hprec->active = false;
     }
 }
 
-struct hprec_t *newHPRec() {
-    struct hprec_t *hprec = malloc(sizeof(struct hprec_t));
-    hprec->active = 1;
+HP *HP_init() {
+    HP *hp = malloc(sizeof(HP));
+    hp->H = 0;
+    hp->headHPRec = NULL;
+    return hp;
+}
+
+struct hprectype *newHPRec() {
+    struct hprectype *hprec = malloc(sizeof(struct hprectype));
+    hprec->active = true;
     hprec->rcount = 0;
     for (int i = 0; i < K; i++)
         hprec->HP[i] = NULL;
@@ -65,33 +66,40 @@ struct hprec_t *newHPRec() {
     return hprec;
 }
 
-struct hprec_t *allocate_HPRec(HP *hp) {
-    struct hprec_t *hprec = hp->headHPRec;
+struct hprectype *allocate_HPRec(HP *hp) {
+    struct hprectype *hprec = hp->headHPRec;
     for (; hprec; hprec = hprec->next)
         if (hprec->active ||
-            !__sync_bool_compare_and_swap(&hprec->active, 0, 1))
+            !__sync_bool_compare_and_swap(&hprec->active, false, true))
             continue;
         else
             return hprec;
 
     __sync_fetch_and_add(&hp->H, K);
 
-    struct hprec_t *myhprec = newHPRec();
-    struct hprec_t *oldHead;
+    struct hprectype *myhprec = newHPRec();
+    struct hprectype *oldHead;
     do {
         oldHead = hp->headHPRec;
         myhprec->next = oldHead;
-    } while (!__sync_bool_compare_and_swap(&hp->headHPRec, oldHead, myhprec));
+    } while (!__sync_bool_compare_and_swap(&hp->headHPRec, oldHead,
+                                           myhprec));
     return myhprec;
 }
 
-void retire_node(HP *hp, struct hprec_t *myhprec, void *node) {
+void retire_HPRec(struct hprectype *myhprec) {
+    for (int i = 0; i < K; i++)
+        myhprec->HP[i] = NULL;
+    myhprec->active = false;
+}
+
+void retire_node(HP *hp, struct hprectype *myhprec, void *node) {
     for (int i = 0; i < K; i++)
         if (myhprec->HP[i] == node) {
             list_push(myhprec->rlist, node);
             myhprec->rcount++;
             myhprec->HP[i] = NULL;
-            if (myhprec->rcount >= R()) {
+            if (myhprec->rcount >= R(hp->H)) {
                 scan(hp, myhprec);
                 help_scan(hp, myhprec);
             }

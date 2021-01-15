@@ -5,25 +5,25 @@
 #ifndef LOCK_FREE_QUEUE_LIST_H
 #define LOCK_FREE_QUEUE_LIST_H
 
-#define MAXLENGTH 256
-#define K 4
+#include <stdbool.h>
 
-struct list_t {
-    void *list[MAXLENGTH];
+#define K 4
+#define L 256
+
+struct listtype {
+    void *list[L];
     int head;
     int tail;
 };
 
-struct list_t *list_init();
+struct listtype *list_init();
 
-int list_push(struct list_t *list, void *node);
+int list_push(struct listtype *list, void *node);
 
-void *list_pop(struct list_t *list);
+void *list_pop(struct listtype *list);
 
-int list_lookup(struct list_t *list, void *node);
+bool list_lookup(struct listtype *list, void *node);
 
-int list_popAll(struct list_t *list, void **output);
-
-void sort(struct list_t* list);
+int list_popall(struct listtype *list, void **output);
 
 #endif //LOCK_FREE_QUEUE_LIST_H

@@ -21,9 +21,9 @@ typedef struct LFqueue {
 
 void initMSqueue(lfqueue *lfqueue1, int maxQueueSize);
 
-int enqueue(lfqueue *lfqueue1, void *data, struct hprec_t *hprec);
+int enqueue(lfqueue *lfqueue1, void *data, struct hprectype *hprec);
 
-void *dequeue(lfqueue *lfqueue1, struct hprec_t *hprect, HP *hp);
+void *dequeue(lfqueue *lfqueue1, struct hprectype *hprect, HP *hp);
 
 void freeQueue(lfqueue *lfqueue1);
 

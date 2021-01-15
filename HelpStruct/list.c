@@ -2,91 +2,53 @@
 // Created by Ultimatum on 20.11.2020.
 //
 
-#include <stdlib.h>
+#include <malloc.h>
 #include "list.h"
 
-struct list_t *list_init() {
-    struct list_t *list = malloc(sizeof(struct list_t));
+struct listtype *list_init() {
+    struct listtype *list = malloc(sizeof(struct listtype));
     list->head = list->tail = 0;
-    for (int i = 0; i < MAXLENGTH; i++)
+    for (int i = 0; i < L; i++)
         list->list[i] = NULL;
     return list;
 }
 
-
-int list_push(struct list_t *list, void *node) {
-    int position = list->tail + 1;
-    if (position != MAXLENGTH) {
-        list->list[list->tail] = node;
-        list->tail = position;
-        return position;
-    } else
-        return -1;
+int list_push(struct listtype *list, void *node) {
+    int pos = (list->head + 1) & (L - 1); /*circular list*/
+    if (pos != list->tail) {
+        list->list[list->head] = node;
+        list->head = pos;
+        return pos;
+    } else return -1;
 }
 
-void *list_pop(struct list_t *list) {
+void *list_pop(struct listtype *list) {
     if (list->head != list->tail) {
-        void *value = list->list[list->head];
-        list->list[list->head] = NULL;
-        list->head += 1;
-        return value;
-    } else {
-        void *value = list->list[list->tail];
+        void *tmpval = list->list[list->tail];
         list->list[list->tail] = NULL;
-        return value;
+        list->tail = (list->tail++) & (L - 1);
+        return tmpval;
+    } else {
+        void *tmpval = list->list[list->tail];
+        list->list[list->tail] = NULL;
+        return tmpval;
     }
 }
 
-int list_lookup(struct list_t *list, void *node) {
-    int right = list->tail;
-    int left = list->head;
-    int mid = 0;
-    while (1) {
-        mid = (left + right) / 2;
-
-        if (node < list->list[mid])
-            right = mid - 1;
-        else if (node > list->list[mid]) {
-            left = mid + 1;
-        } else {
-            return mid;
-        }
-
-        if (left > right) {
-            return -1;
-        }
-    }
+bool list_lookup(struct listtype *list, void *node) {
+    for (int i = 0; i < L; i++)
+        if (list->list[i] == node) return true;
+    return false;
 }
 
-int list_popAll(struct list_t *list, void **output) {
-    int length = list->tail - list->head;
-    for (int i = list->head; i < list->tail; i++)
+
+int list_popall(struct listtype *list, void **output) {
+    int length = 0;
+    if (list->tail <= list->head) length = list->head - list->tail;
+    else length = L - list->tail + list->head;
+    for (int i = list->tail; i < list->head; (i++) & (L - 1))
         output[i] = list->list[i];
 
     list->head = list->tail = 0;
     return length;
-}
-
-void sortList(void* list[], int head, int tail) {
-    if (head < tail) {
-        int left = head, right = tail;
-        void *middle = list[(left + right) / 2];
-        do {
-            while (list[left] < middle) left++;
-            while (list[right] > middle) right--;
-            if (left <= right) {
-                void *tmp = list[left];
-                list[left] = list[right];
-                list[right] = tmp;
-                left++;
-                right--;
-            }
-        } while (left <= right);
-        sortList(list, head, right);
-        sortList(list, left, tail);
-    }
-}
-
-void sort(struct list_t* list) {
-    sortList(list->list, list->head, list->tail);
 }

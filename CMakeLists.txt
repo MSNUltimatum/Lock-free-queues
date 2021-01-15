@@ -12,6 +12,11 @@ add_executable(Lock_free_queue main.c
         OptimisticLFQ/Optimistic_lock_free_queue.c OptimisticLFQ/Optimistic_lock_free_queue.h
         LFS/LFStack.c LFS/LFStack.h
         HelpStruct/HP.c HelpStruct/HP.h
-        HelpStruct/list.c HelpStruct/list.h HelpStruct/exp_backoff.c HelpStruct/exp_backoff.h)
+        HelpStruct/list.c HelpStruct/list.h HelpStruct/exp_backoff.c HelpStruct/exp_backoff.h
+        )
 target_link_libraries(${PROJECT_NAME} pthread)
 target_link_libraries(${PROJECT_NAME} atomic)
+target_link_libraries(${PROJECT_NAME} /media/ultimatum/WorkSSD/Cprojects/Lock-free_queue/liblfds711/bin/liblfds711.a)
+target_link_libraries (${PROJECT_NAME} -lurcu -lurcu-cds)
+
+

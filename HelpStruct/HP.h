@@ -5,34 +5,36 @@
 #ifndef LOCK_FREE_QUEUE_HP_H
 #define LOCK_FREE_QUEUE_HP_H
 
+#include <stdbool.h>
 #include "list.h"
 
-struct hprec_t {
-    int active;
+struct hprectype {
+    bool active;
     unsigned int rcount;
-    struct list_t *rlist;
+    struct listtype *rlist;
     void *HP[K];
-    struct hprec_t *next;
+    struct hprectype *next;
 };
 
-
-typedef struct {
-    struct hprec_t *headHPRec;
+typedef struct _HP {
+    struct hprectype *headHPRec;
     int H;
 } HP;
 
-int R();
+int R(int H);
 
-void scan(HP *hp, struct hprec_t *myhprec);
+void scan(HP *hp, struct hprectype *myhprec);
 
-void help_scan(HP *hp, struct hprec_t *myhprec);
+void help_scan(HP *hp, struct hprectype *myhprec);
 
-void HP_init(HP* hp);
+HP *HP_init();
 
-struct hprec_t *newHPRec();
+struct hprectype *newHPRec();
 
-struct hprec_t *allocate_HPRec(HP *hp);
+struct hprectype *allocate_HPRec(HP *hp);
 
-void retire_node(HP *hp, struct hprec_t *myhprec, void *node);
+void retire_HPRec(struct hprectype *myhprec);
+
+void retire_node(HP *hp, struct hprectype *myhprec, void *node);
 
 #endif //LOCK_FREE_QUEUE_HP_H
