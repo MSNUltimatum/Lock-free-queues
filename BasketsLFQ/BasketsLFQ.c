@@ -17,22 +17,24 @@
 #define CAS __sync_bool_compare_and_swap
 #define MAX_HOPS 3
 
+void allocate_ptr(struct pointer_t *pointer, struct node_t *pNode, int deleted, unsigned int tag);
+
 void init_queue(struct queue_t *q) {
     struct node_t *nd = calloc(sizeof(struct node_t), 1);
-    nd->next.ptr = NULL;
-    nd->next.deleted = 0;
-    nd->next.tag = 0;
-    q->tail.ptr = nd;
-    q->tail.deleted = 0;
-    q->tail.tag = 0;
-    q->head.ptr = nd;
-    q->head.deleted = 0;
-    q->head.tag = 0;
+    allocate_ptr(&nd->next, NULL, 0, 0);
+    allocate_ptr(&q->tail, nd, 0, 0);
+    allocate_ptr(&q->head, nd, 0, 0);
 }
 
 void backoff_scheme() {
      nanosleep((const struct timespec[]){{0, 500L}}, NULL);
 //    usleep(1);
+}
+
+void allocate_ptr(struct pointer_t *pointer, struct node_t *pNode, int deleted, unsigned int tag) {
+    pointer->ptr = pNode;
+    pointer->deleted = deleted;
+    pointer->tag = tag;
 }
 
 bool baskets_enqueue(struct queue_t *q, int val) {
@@ -43,12 +45,12 @@ bool baskets_enqueue(struct queue_t *q, int val) {
         struct pointer_t next = tail.ptr->next;
         if (tail.ptr == q->tail.ptr) {
             if (next.ptr == NULL) {
-                nd->next.ptr = NULL;
-                nd->next.deleted = 0;
-                nd->next.tag = tail.tag + 2;
+                allocate_ptr(&nd->next, NULL, 0, tail.tag + 2);
                 if (CAS(&tail.ptr->next.ptr, next.ptr, nd) &&
                     CAS(&tail.ptr->next.deleted, next.deleted, 0) &&
                     CAS(&tail.ptr->next.tag, next.tag, tail.tag + 1)) {
+
+
                     CAS(&q->tail.ptr, tail.ptr, nd);
                     CAS(&q->tail.deleted, tail.deleted, 0);
                     CAS(&q->tail.tag, tail.tag, tail.tag + 1);
@@ -89,6 +91,7 @@ void free_chain(struct queue_t *q, struct pointer_t head, struct pointer_t new_h
         }
     }
 }
+
 
 int baskets_dequeue(struct queue_t *q) {
     while (true) {
