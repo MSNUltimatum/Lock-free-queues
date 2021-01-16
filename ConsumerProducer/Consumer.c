@@ -4,15 +4,15 @@
 
 #include <stdio.h>
 #include "Consumer.h"
-#include "../MSLFQ/MS_queue.h"
+#include "../BasketsLFQ/BasketsLFQ.h"
 #include "../HelpStruct/queue_with_id.h"
 
 void* consumer(void* arg){
     struct queue_with_id *queue = arg;
-    struct hprectype *hprec = allocate_HPRec(queue->hp);
+//    struct hprectype *hprec = allocate_HPRec(queue->hp);
     int res;
     do{
-        res = dequeue(queue->lf_queue, hprec, queue->hp);
+        res = baskets_dequeue(queue->lf_queue);
         if (res == -1 && queue->poducerCount == *queue->producerFinished) {
             break;
         }

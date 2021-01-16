@@ -4,11 +4,11 @@
 
 #ifndef LOCK_FREE_QUEUE_QUEUE_WITH_ID_H
 #define LOCK_FREE_QUEUE_QUEUE_WITH_ID_H
-#include "../MSLFQ/MS_queue.h"
+#include "../BasketsLFQ/BasketsLFQ.h"
 #include "HP.h"
 
 struct queue_with_id{
-    lfqueue *lf_queue;
+     struct baskets_queue *lf_queue;
     int id;
     HP *hp;
     int* producerFinished;

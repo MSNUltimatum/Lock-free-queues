@@ -7,7 +7,7 @@
 #include <stdatomic.h>
 #include "../HelpStruct/exp_backoff.h"
 
-#define CAS __sync_bool_compare_and_swap
+
 #define QUEUE_EMPTY -1
 #define DUMMY_VAL -2
 #define CAS atomic_compare_exchange_weak
