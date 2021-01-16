@@ -5,28 +5,28 @@
 #ifndef LOCK_FREE_QUEUE_BASKETSLFQ_H
 #define LOCK_FREE_QUEUE_BASKETSLFQ_H
 
-struct node_t;
+#include <stdbool.h>
+#include <glob.h>
 
-struct baskets_pointer_t {
-    struct baskets_node_t *ptr;
-    unsigned short deleted;
-    unsigned int tag;
+struct pointer_t {
+    struct node_t *ptr;
+    bool deleted;
+    size_t tag;
+};
+struct node_t {
+    size_t value;
+    struct pointer_t next;
+};
+struct queue_t {
+    struct pointer_t tail;
+    struct pointer_t head;
 };
 
-struct baskets_node_t {
-    void *value;
-    struct baskets_pointer_t* next;
-};
 
-struct baskets_queue {
-    struct baskets_pointer_t* tail;
-    struct baskets_pointer_t* head;
-};
+void init_queue(struct queue_t *q);
 
-void initBasketsQueue(struct baskets_queue *queue);
+bool baskets_enqueue(struct queue_t *q, int val);
 
-int baskets_enqueue(struct baskets_queue* basketsQueue, void* data);
-
-void* baskets_dequeue(struct baskets_queue* basketsQueue);
+int baskets_dequeue(struct queue_t *q);
 
 #endif //LOCK_FREE_QUEUE_BASKETSLFQ_H

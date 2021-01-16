@@ -8,7 +8,7 @@
 #include "HP.h"
 
 struct queue_with_id{
-     struct baskets_queue *lf_queue;
+     struct queue_t *lf_queue;
     int id;
     HP *hp;
     int* producerFinished;
