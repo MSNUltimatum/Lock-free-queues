@@ -7,15 +7,15 @@
 
 #include <stdbool.h>
 #include <glob.h>
+#include <stdatomic.h>
 
 struct pointer_t {
-    struct node_t *ptr;
-    bool deleted;
-    size_t tag;
+    unsigned long long cnt_val;
 };
+
 struct node_t {
-    size_t value;
-    struct pointer_t next;
+    int value;
+    struct pointer_t *next;
 };
 struct queue_t {
     struct pointer_t tail;
@@ -23,7 +23,7 @@ struct queue_t {
 };
 
 
-void init_queue(struct queue_t *q);
+void baskets_init_queue(struct queue_t *q);
 
 bool baskets_enqueue(struct queue_t *q, int val);
 
