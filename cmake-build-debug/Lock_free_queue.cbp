@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Lock_free_queue"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/media/ultimatum/WorkSSD/Cprojects/Lock-free_queue/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j6 -f &quot;/media/ultimatum/WorkSSD/Cprojects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/media/ultimatum/WorkSSD/Cprojects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/media/ultimatum/WorkSSD/Cprojects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/media/ultimatum/WorkSSD/Cprojects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/media/ultimatum/WorkSSD/Cprojects/Lock-free_queue/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j6 -f &quot;/media/ultimatum/WorkSSD/Cprojects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/media/ultimatum/WorkSSD/Cprojects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/media/ultimatum/WorkSSD/Cprojects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/media/ultimatum/WorkSSD/Cprojects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/media/ultimatum/WorkSSD/Cprojects/Lock-free_queue/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j6 -f &quot;/media/ultimatum/WorkSSD/Cprojects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/media/ultimatum/WorkSSD/Cprojects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/media/ultimatum/WorkSSD/Cprojects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/media/ultimatum/WorkSSD/Cprojects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Lock_free_queue">
+				<Option output="/media/ultimatum/WorkSSD/Cprojects/Lock-free_queue/cmake-build-debug/Lock_free_queue" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/media/ultimatum/WorkSSD/Cprojects/Lock-free_queue/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j6 -f &quot;/media/ultimatum/WorkSSD/Cprojects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 Lock_free_queue"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/media/ultimatum/WorkSSD/Cprojects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/media/ultimatum/WorkSSD/Cprojects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/media/ultimatum/WorkSSD/Cprojects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Lock_free_queue/fast">
+				<Option output="/media/ultimatum/WorkSSD/Cprojects/Lock-free_queue/cmake-build-debug/Lock_free_queue" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/media/ultimatum/WorkSSD/Cprojects/Lock-free_queue/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j6 -f &quot;/media/ultimatum/WorkSSD/Cprojects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 Lock_free_queue/fast"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/media/ultimatum/WorkSSD/Cprojects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/media/ultimatum/WorkSSD/Cprojects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/media/ultimatum/WorkSSD/Cprojects/Lock-free_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/media/ultimatum/WorkSSD/Cprojects/Lock-free_queue/BasketsLFQ/BasketsLFQ.c">
+			<Option target="Lock_free_queue"/>
+		</Unit>
+		<Unit filename="/media/ultimatum/WorkSSD/Cprojects/Lock-free_queue/BasketsLFQ/BasketsLFQ.h">
+			<Option target="Lock_free_queue"/>
+		</Unit>
+		<Unit filename="/media/ultimatum/WorkSSD/Cprojects/Lock-free_queue/ConsumerProducer/Consumer.c">
+			<Option target="Lock_free_queue"/>
+		</Unit>
+		<Unit filename="/media/ultimatum/WorkSSD/Cprojects/Lock-free_queue/ConsumerProducer/Consumer.h">
+			<Option target="Lock_free_queue"/>
+		</Unit>
+		<Unit filename="/media/ultimatum/WorkSSD/Cprojects/Lock-free_queue/ConsumerProducer/Producer.c">
+			<Option target="Lock_free_queue"/>
+		</Unit>
+		<Unit filename="/media/ultimatum/WorkSSD/Cprojects/Lock-free_queue/ConsumerProducer/Producer.h">
+			<Option target="Lock_free_queue"/>
+		</Unit>
+		<Unit filename="/media/ultimatum/WorkSSD/Cprojects/Lock-free_queue/HelpStruct/HP.c">
+			<Option target="Lock_free_queue"/>
+		</Unit>
+		<Unit filename="/media/ultimatum/WorkSSD/Cprojects/Lock-free_queue/HelpStruct/HP.h">
+			<Option target="Lock_free_queue"/>
+		</Unit>
+		<Unit filename="/media/ultimatum/WorkSSD/Cprojects/Lock-free_queue/HelpStruct/exp_backoff.c">
+			<Option target="Lock_free_queue"/>
+		</Unit>
+		<Unit filename="/media/ultimatum/WorkSSD/Cprojects/Lock-free_queue/HelpStruct/exp_backoff.h">
+			<Option target="Lock_free_queue"/>
+		</Unit>
+		<Unit filename="/media/ultimatum/WorkSSD/Cprojects/Lock-free_queue/HelpStruct/list.c">
+			<Option target="Lock_free_queue"/>
+		</Unit>
+		<Unit filename="/media/ultimatum/WorkSSD/Cprojects/Lock-free_queue/HelpStruct/list.h">
+			<Option target="Lock_free_queue"/>
+		</Unit>
+		<Unit filename="/media/ultimatum/WorkSSD/Cprojects/Lock-free_queue/HelpStruct/queue_with_id.c">
+			<Option target="Lock_free_queue"/>
+		</Unit>
+		<Unit filename="/media/ultimatum/WorkSSD/Cprojects/Lock-free_queue/HelpStruct/queue_with_id.h">
+			<Option target="Lock_free_queue"/>
+		</Unit>
+		<Unit filename="/media/ultimatum/WorkSSD/Cprojects/Lock-free_queue/LFS/LFStack.c">
+			<Option target="Lock_free_queue"/>
+		</Unit>
+		<Unit filename="/media/ultimatum/WorkSSD/Cprojects/Lock-free_queue/LFS/LFStack.h">
+			<Option target="Lock_free_queue"/>
+		</Unit>
+		<Unit filename="/media/ultimatum/WorkSSD/Cprojects/Lock-free_queue/MSLFQ/MS_queue.c">
+			<Option target="Lock_free_queue"/>
+		</Unit>
+		<Unit filename="/media/ultimatum/WorkSSD/Cprojects/Lock-free_queue/MSLFQ/MS_queue.h">
+			<Option target="Lock_free_queue"/>
+		</Unit>
+		<Unit filename="/media/ultimatum/WorkSSD/Cprojects/Lock-free_queue/OptimisticLFQ/Optimistic_lock_free_queue.c">
+			<Option target="Lock_free_queue"/>
+		</Unit>
+		<Unit filename="/media/ultimatum/WorkSSD/Cprojects/Lock-free_queue/OptimisticLFQ/Optimistic_lock_free_queue.h">
+			<Option target="Lock_free_queue"/>
+		</Unit>
+		<Unit filename="/media/ultimatum/WorkSSD/Cprojects/Lock-free_queue/main.c">
+			<Option target="Lock_free_queue"/>
+		</Unit>
+		<Unit filename="/media/ultimatum/WorkSSD/Cprojects/Lock-free_queue/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

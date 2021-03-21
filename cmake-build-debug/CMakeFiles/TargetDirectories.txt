@@ -1,0 +1,3 @@
+/media/ultimatum/WorkSSD/Cprojects/Lock-free_queue/cmake-build-debug/CMakeFiles/edit_cache.dir
+/media/ultimatum/WorkSSD/Cprojects/Lock-free_queue/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/media/ultimatum/WorkSSD/Cprojects/Lock-free_queue/cmake-build-debug/CMakeFiles/Lock_free_queue.dir

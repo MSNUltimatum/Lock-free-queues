@@ -8,8 +8,8 @@
 #include <malloc.h>
 #include "HelpStruct/queue_with_id.h"
 #include "BasketsLFQ/BasketsLFQ.h"
-#define PRODUCER_COUNT 3
-#define CONSUMER_COUNT 4
+#define PRODUCER_COUNT 5
+#define CONSUMER_COUNT 1
 
 int main() {
     struct queue_t* queue = calloc(sizeof (struct queue_t), 1);
